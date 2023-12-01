@@ -1,0 +1,66 @@
+:root {
+    --negro: #1b1d24;
+    --verde1: #365A08;
+    --verde2: #5d9d0b;
+    --verde3: #72EB3A;
+    --blanco: #f1f1f1;
+    --rojo: #FF0000;
+    --azul: #1a333e;
+    --azuleshover: #2196f3;
+    --grisclaro: #4E4B5076;
+}
+
+* {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    background-color: var(--blanco);
+}
+
+.caja-login {
+    width: 600px;
+    margin: 10% auto;
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente solo para .caja-login */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-control{
+    z-index: 6;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+    width: 550px;
+    z-index: 4;
+}
+
+
+.btn-2{
+    display: inline-block;
+    padding: 7px 10px;
+    background-color: var(--negro);
+    color: var(--blanco);
+    border-radius: 5px;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-2:hover {
+    color: var(--azuleshover);
+}
+
+.caja-login {
+    border: 2px solid var(--negro);
+    padding: 20px;
+    border-radius: 5px;
+    backdrop-filter: blur(10px); /* Ajusta el valor de blur según la cantidad de desenfoque que desees */
+    background-color: rgba(255, 255, 255, 0.5); /* Añade un fondo semitransparente para resaltar el efecto de borrosidad */
+  }

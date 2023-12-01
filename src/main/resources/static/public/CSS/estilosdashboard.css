@@ -1,0 +1,248 @@
+/* Variables de colores */
+:root {
+    --negro: #1b1d24;
+    --verde1: #365A08;
+    --verde2: #5d9d0b;
+    --verde3: #72EB3A;
+    --blanco: #f1f1f1;
+    --rojo:#FF0000 ;
+    --azul:#1a333e;
+    --azuleshover:#2196f3;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--negro);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    font-size: 1em;
+}
+
+h1, h2 {
+    color: var(--blanco);
+}
+
+/* Estilos para el símbolo + */
+.plus-symbol::after {
+    content: "+"; 
+    color: var(--blanco); 
+}
+
+/* Estilos para los botones al pasar el cursor por encima */
+.btn1:hover {
+    color: var(--azuleshover);
+}
+
+/* Estilos para la barra de navegación lateral */
+.barra-dashboard {
+    position: fixed;
+    background: var(--azul);
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease; /* Transición para la animación de hover */
+    overflow: hidden; /* Para ocultar contenido que se sale del ancho */
+    z-index: 1;
+}
+
+.barra-dashboard.expandida {
+    width: 250px; /* Ancho expandido */
+}
+
+.barra-dashboard .nombre-logo {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para el menú */
+.menu {
+    padding-top: 20px;
+}
+
+.menu-item {
+    font-size: 24px;
+    padding: 10px 40px;
+    color: var(--blanco);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Submenús */
+.with-submenu {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%; /* Alineación a la mitad de la barra */
+    transform: translateX(-50%); /* Centrar horizontalmente */
+    background-color: var(--negro);
+    display: none;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.with-submenu:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    padding: 10px;
+    color: var(--blanco);
+}
+
+.submenu li :hover{
+    color: var(--azuleshover);
+}
+
+/* Contenido principal */
+.container {
+    position: absolute;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    /* background: var(--negro); */
+}
+
+.container .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 10vh;
+    background: var(--negro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container .header .nav {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.container .header .nav .buscar {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+}
+
+.container .header .nav .cerrar-sesion {
+    color: var(--blanco);
+}
+
+.container .header .nav .buscar input[type=text] {
+    border: none;
+    background: var(--blanco);
+    padding: 10px;
+    width: 50%;
+}
+
+.container .header .nav .buscar button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para el enlace "Cerrar Sesión" */
+.cerrar-sesion a {
+    color: var(--blanco); 
+    text-decoration: none;
+}
+
+/* Estilos para el icono ion-icon al pasar el cursor por encima */
+button:hover ion-icon[name="search-outline"] {
+    cursor: pointer; /* Cambia el color a tu preferencia */
+    /* Otros estilos que desees aplicar en el hover */
+}
+
+/* Formulario*/
+
+#formulario{
+    text-align: center;
+    margin-top: 7%;
+}
+
+.btn{
+    background: var(--negro);
+}
+
+.btn:hover{
+    background: var(--negro);
+    color: var(--azuleshover);
+}
+
+.caja-formulario{
+    margin-top: 90px;
+}
+
+.fRegistrarProveedor{
+    text-decoration: none;
+    color: var(--rojo);
+}
+
+.p{
+    z-index: 4;
+}
+
+.tabla-container{
+    text-align: center; 
+    margin: 20px auto; 
+    max-width: 900px;
+    background-color: whitesmoke ;
+}
+
+
+
+
+/* Responsive*/
+
+@media screen and (max-width: 1050px){
+    .barra-dashboard li{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 940px){
+    .barra-dashboard li span{
+        display: block;
+    }
+    .barra-dashboard{
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 536px){
+    .nombre-logo h1{
+        font-size: 1.5em;
+    }
+    .barra-dashboard li span{
+        font-size: 1em;
+    }
+}
