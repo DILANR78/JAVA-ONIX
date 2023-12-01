@@ -43,7 +43,7 @@ public class Venta {
 
     //LLAVES FORANEAS
     @ManyToOne
-    @JoinColumn(name = "usuario_idUsuario", nullable = true, columnDefinition = "int(11)")
+    @JoinColumn(name = "usuario_idUsuario", nullable = true)
     private Usuario usuario;
 
     @ManyToOne

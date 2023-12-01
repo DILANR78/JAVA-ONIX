@@ -23,7 +23,7 @@ public class Proveedor {
     private String nombreProveedor;
 
     @Column(name = "tipoDocumentoProveedor", nullable = true, columnDefinition = "enum('C.C','NIT')")
-    private String apellidoUsuario;
+    private String tipoDocumentoProveedor;
 
     @Column(name = "numeroDocumento", nullable = true, columnDefinition = "int(11)")
     private int numeroDocumento;

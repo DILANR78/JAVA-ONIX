@@ -29,7 +29,7 @@ public class Inventario{
     private int stockInsumo;
 
     @Column(name = "precioInsumo", nullable = true, columnDefinition = "int(11)")
-    private int fechaCompra;
+    private int precioInsumo;
 
     @Column(name = "tipoProductoTerminado", nullable = true, columnDefinition = "varchar(55)")
     private String tipoProductoTerminado;

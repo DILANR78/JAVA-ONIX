@@ -26,9 +26,9 @@ public class VentaDetalle {
     private String descripcionVentaDetalle;
 
     @Column(name = "valorUnitarioVentaDetalle", nullable = true, columnDefinition = "int(11)")
-    private String valorUnitarioVentaDetalle;
+    private int valorUnitarioVentaDetalle;
 
     @Column(name = "valorTotalVentaDetalle", nullable = true, columnDefinition = "int(11)")
-    private String valorTotalVentaDetalle;
+    private int valorTotalVentaDetalle;
 
 }
