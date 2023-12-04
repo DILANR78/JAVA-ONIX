@@ -30,19 +30,18 @@ public class ProveedorController {
     }
 
         
-    @GetMapping("/{proveedoridProveedor}")
-    public Optional<Proveedor> getBId(@PathVariable("proveedoridProveedor")Long proveedoridProveedor){
-        return proveedorService.getProveedor(proveedoridProveedor);
+    @GetMapping("/{proveedorId}")
+    public Optional<Proveedor> getBId(@PathVariable("proveedorId")Long proveedorId){
+        return proveedorService.getProveedor(proveedorId);
     }
-
 
     @PostMapping
     public void saveUpdate(@RequestBody Proveedor proveedor){
         proveedorService.saveOrUpdate(proveedor);
     }
 
-    @DeleteMapping("/{proveedoridProveedor}")
-    public void saveUpdate(@PathVariable("proveedoridProveedor")Long proveedoridProveedor){
-        proveedorService.delete(proveedoridProveedor);
+    @DeleteMapping("/{proveedorId}")
+    public void saveUpdate(@PathVariable("proveedorId")Long proveedorId){
+        proveedorService.delete(proveedorId);
     }
 }
