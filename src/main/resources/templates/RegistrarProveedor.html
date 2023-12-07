@@ -3,79 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONIX +</title>
+    <title>PROVEEDOR</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/public/CSS/estilosdashboard.css">
+    <link rel="stylesheet" href="./public/CSS/estilosproveedor.css">
   </head>
 <body>
  
-    <form action="/agregarproveedor">
-    <div class="caja-formulario">
-        <div class="col-12 col-sm-7 col-md-6 m-auto">
-        <div class="card border-0 shadow">
-          <div class="card-body">
-        <div class="form-row">
-          <div class="form-group col-md-11">
-            <label for="inputEmail4">NOMBRE DEL PROVEEDOR</label>
-            <input type="text" class="form-control" id="inputEmail4" name="nombreProveedor"   placeholder="Nombre">
-          </div>
-            <div class="form-row">
-          <div class="form-group col-md-6">
-          <label>TIPO DE DOCUMENTO<input list="browsers" name="tipoDocumentoProveedor" placeholder="Tipo"/></label>
-        <datalist id="browsers">
-          <option value="C.C"></option>
-          <option value="NIT"></option>
-        </datalist>
-          </div>
-        <div class="form-group col-md-6">
-          <label for="inputEmail4">NUMERO DE DOCUMENTO</label>
-          <input type="text" class="form-control" id="inputEmail4" name="numeroDocumento"  placeholder="Numero">
+    <div class="container">
+      <div class="row text-center d-flex align-items-center">
+          <h1>PROVEEDOR</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <a th:href="@{'/proveedor'}" class="btn btn-primary btn-sm mb3">AGREGAR PROVEEDOR</a>
         </div>
-        <button type="submit" class="btn btn-primary">INGRESAR</button>
-        <!-- <button type="submit" class="btn btn-primary">CANCELAR</button> -->
-       
-          </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-    </form>
-
-  
-    <div class="tabla-container">
-    <table class="tablaRegistro">
-        <thead>
+      </div>
+      <br>
+      <table class="table">
+        <thead class="thead-dark">
           <tr>
-            <th scope="col">ID</th>
+            <th scope="col">ID PROVEEDOR</th>
             <th scope="col">NOMBRE PROVEEDOR</th>
-            <th scope="col">TIPO DOCUMENTO</th>
-            <th scope="col">NUMERO DOCUMENTO</th>
+            <th scope="col">TIPO DOCUMENTO PROVEEDOR</th>
+            <th scope="col">NUEMRO DOCUMENTO PROVEEDOR</th>
+            <th scope="col">ACCIONES</th>
           </tr>
         </thead>
         <tbody>
-            {% for contact in contacts %}
-            <tr>
-                <td>{{ contact.idProveedor }}</td>
-                <td>{{ contact.nombreProveedor }}</td>
-                <td>{{ contact.tipoDocumentoProveedor }}</td>
-                <td>{{ contact.numeroDocumento }}</td>
-                <td>
-                    <a href="" style="background-color: #007bff; color: #fff; padding: 5px 10px; text-decoration: none; border-radius: 5px">EDITAR</a>
-                    <a href="" style="background-color: red; color: #fff; padding: 5px 10px; text-decoration: none; border-radius: 5px;">ELIMINAR</a>
-                </td>
-              </tr>
-            {% endfor%}
+          <tr th:each="proveedor : ${ProveedorController}">
+            <td th:text="${proveedor.id}">1</td>
+            <td th:text="${proveedor.nombre}">Telas y mas</td>
+            <td th:text="${proveedor.tipoDocumento}">C.C</td>
+            <td th:text="${proveedor.numeroDocumento}">34561345</td>
+            <td>
+              <a th:href="@{'/proveedores/editar/' + ${proveedor.id}}" class="btn btn-info">EDITAR</a>
+              <a th:href="@{'/proveedores/eliminar/' + ${proveedor.id}}" class="btn btn-danger">ELIMINAR</a>
+            </td>
+          </tr>
         </tbody>
       </table>
-      </div>
+        </tbody>
+      </table>
+    </div>
 
 
-
-
-
-    
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
