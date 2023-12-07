@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGREGAR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./public/CSS/estilosproveedor.css">
+  </head>
+<body>
+  <br>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+        <h1 class="text-center text-dark">AGREGAR PROVEEDOR</h1>
+          <div class="card-body">
+
+              <form action="/agregarprove" method="post">
+              <div class="form-group">
+                <label>NOMBRE PROVEEDOR: </label>
+                <input type="text" id="nombreProveedor"  name="nombreProveedor" class="form-control" placeholder="NOMBRE PROVEEDOR">
+                <br>
+                <label>TIPO DE DOCUMENTO</label>
+                <br>
+                <input type="text" id="tipoDocumentoProveedor"  name="tipoDocumentoProveedor" list="datalistOptions" class="form-control" placeholder="C.C o NIT">
+                 <datalist id="datalistOptions">
+                  <option value="C.C">
+                  <option value="NIT">
+                 </datalist>
+                 <br>
+                <label>NUMERO DE DOCUMENTO DEL PROVEEDOR: </label>
+                <input type="text"  id="numeroDocumento"  name="numeroDocumento" class="form-control" placeholder="NUMERO DE DOCUMENTO">
+                 <br>
+                <div class="box-footer">
+                  <button  type="submit" class="btn btn-primary">GUARDAR PROVEEDOR</button>
+                 </div>
+              </div>
+            </form>
+          </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/static/JS/formularios.js"></script>
+    <!-- <script src="../JS/scripdashboard.js"></script> -->
+</body>
+<script></script>
+</html>

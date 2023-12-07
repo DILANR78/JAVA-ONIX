@@ -23,12 +23,10 @@ public class ProveedorController {
     @Autowired
     private  ProveedorService proveedorService;
 
-
     @GetMapping
     public List<Proveedor> getAll(){
         return proveedorService.getProveedor();
     }
-
         
     @GetMapping("/{proveedorId}")
     public Optional<Proveedor> getBId(@PathVariable("proveedorId")Long proveedorId){
@@ -44,4 +42,9 @@ public class ProveedorController {
     public void saveUpdate(@PathVariable("proveedorId")Long proveedorId){
         proveedorService.delete(proveedorId);
     }
+
+    public String guardarProveedor(){
+        return "RegistrarProveedor";
+    }
+
 }
