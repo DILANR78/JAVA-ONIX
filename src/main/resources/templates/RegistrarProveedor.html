@@ -31,12 +31,13 @@
         </thead>
         <tbody>
           <tr th:each="proveedores:${proveedor}">
-            <td th:text="${proveedor.idProveedor}"></td>
-            <td th:text="${proveedor.nombreProveedor}"></td>
-            <td th:text="${proveedor.tipoDocumentoProveedor}"></td>
-            <td th:text="${proveedor.numeroDocumento}"></td>
+            <td name="idProveedor" id="idProveedor"  th:text="${proveedor.idProveedor}"></td>
+            <td th:text="${proveedor.nombreProveedor}">NOMBRE PROVEEDOR</td>
+            <td th:text="${proveedor.tipoDocumentoProveedor}">TIPO DOCUMENTO PROVEEDOR</td>
+            <td th:text="${proveedor.numeroDocumento}">NUMERO DOCUMENTO PROVEEDOR</td>
             <td>
-              <a class="btn btn-info">EDITAR</a>
+              <a href="/Editarprove" class="btn btn-info">EDITAR</a>
+
               <a th:href="@{'/proveedores/eliminar/'+${proveedor.idProveedor}}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este proveedor?')">ELIMINAR</a>
             </td>
           </tr>
