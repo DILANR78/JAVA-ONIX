@@ -1,8 +1,6 @@
 package com.onix.ONIXJ.controller;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,12 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import com.onix.ONIXJ.entity.Proveedor;
 import com.onix.ONIXJ.service.ProveedorService;
-
-import ch.qos.logback.core.model.Model;
 
 
 @Controller
@@ -36,6 +30,13 @@ public class rutas {
         model.addAttribute("proveedor", new Proveedor());
         return "indexdashboard";
     }
+
+    @RequestMapping("/productoChaquetaVigilancia")
+    public String productoChaquetaVigilancia(ModelMap model){
+        model.addAttribute("proveedor", new Proveedor());
+        return "productoChaquetaVigilancia";
+    }
+
 
     @GetMapping("/RegistrarProveedor")
     public String RegistrarProveedor(ModelMap model ){
@@ -87,6 +88,5 @@ public class rutas {
         return "check";
     }
     */
-
 }
     
