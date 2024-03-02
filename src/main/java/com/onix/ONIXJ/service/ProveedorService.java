@@ -18,7 +18,7 @@ public class ProveedorService {
         return proveedorRepository.findAll();
     }
 
-    public Optional<Proveedor> getProveedor(Long idProveedor){
+    public Optional<Proveedor> getProveedorById(Long idProveedor){
     return proveedorRepository.findById(idProveedor);
     }
 
@@ -26,7 +26,7 @@ public class ProveedorService {
         proveedorRepository.save(proveedor);
     }
 
-    public void delete(Long idProveedor){
+    public void deleteProveedor(Long idProveedor){
         proveedorRepository.deleteById(idProveedor);
     }
 
