@@ -15,7 +15,7 @@
       </div>
       <div class="row">
         <div class="col-lg-3 d-flex flex-row">
-          <a th:href="@{/Agregarproveedor}" class="btn btn-primary btn-sm mb-3 mr-2">AGREGAR ROL</a>
+          <a th:href="@{/Agregarrol}" class="btn btn-primary btn-sm mb-3 mr-2">AGREGAR ROL</a>
           <a href="#" class="btn btn-success btn-sm mb-3 mr-2">REPORTE EN EXCEL</a>
           <a href="#" class="btn btn-danger btn-sm mb-3">REPORTE EN PDF</a>
         </div>
@@ -30,11 +30,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr th:each="proveedores:${proveedor}">
-            <td name="idProveedor" id="idProveedor"  th:text="${proveedores.idProveedor}"></td>
-            <td th:text="${proveedores.nombreProveedor}"></td>
-            <td th:text="${proveedores.tipoDocumentoProveedor}"></td>
-            <td th:text="${proveedores.numeroDocumento}"></td>
+          <tr th:each="rol:${roles}">
+            <td name="idRol" id="idRol"  th:text="${rol.idRol}"></td>
+            <td th:text="${rol.nombreRol}"></td>
             <td>
               <!-- <a class="btn btn-primary" th:href="@{/editarproveedor/{idProveedor}(idProveedor=${proveedor.idProveedor})}">EDITAR</a> -->
               <!-- <a class="btn btn-danger" th:href="@{/}"></a> -->
