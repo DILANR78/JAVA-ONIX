@@ -40,7 +40,7 @@ public class RolController {
     return "EditarRol";
     }
 
-    @PostMapping("editarrol/EditarRol")
+    @PostMapping("/editarrol/EditarRol")
     public String postMethoEdit(@ModelAttribute("roles") Rol rol){
     rolService.saveOrUpdate(rol);
     System.out.println("Se a editado: "+ rol);

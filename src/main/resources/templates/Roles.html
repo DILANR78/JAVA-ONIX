@@ -34,8 +34,8 @@
             <td name="idRol" id="idRol"  th:text="${rol.idRol}"></td>
             <td th:text="${rol.nombreRol}"></td>
             <td>
-              <!-- <a class="btn btn-primary" th:href="@{/editarproveedor/{idProveedor}(idProveedor=${proveedor.idProveedor})}">EDITAR</a> -->
-              <!-- <a class="btn btn-danger" th:href="@{/}"></a> -->
+               <a class="btn btn-primary" th:href="@{/editarrol/{idRol}(idRol=${rol.idRol})}">EDITAR</a>
+               <a class="btn btn-danger" th:href="@{/eliminarrol/{idRol}(idRol=${rol.idRol})}">ELIMINAR</a>
             </td>
           </tr>
         </tbody>

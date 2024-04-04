@@ -33,7 +33,7 @@ private ProveedorService proveedorService;
 
     @GetMapping("/editarproveedor/{idProveedor}")
     public String editarproveedor(@PathVariable Long idProveedor, ModelMap model){
-        model.addAttribute("proveedor", new Proveedor()); //ENTITY
+        model.addAttribute("proveedores", new Proveedor()); //ENTITY
         Optional<Proveedor> proveedores = proveedorService.getProveedorById(idProveedor);
         model.addAttribute("proveedor", proveedores.orElse(null));
         System.out.println("SE A CARGADO EL OBJETO: "+ proveedores);
@@ -41,11 +41,12 @@ private ProveedorService proveedorService;
     }
 
     @PostMapping("/editarproveedor/EditProveedor")
-    public String postMethodEdit(@ModelAttribute("proveedor")Proveedor proveedor){
+    public String postMethodEdit(@ModelAttribute("proveedor") Proveedor proveedor) {
         proveedorService.saveOrUpdate(proveedor);
-        System.out.println("SE A EDITADO: "+proveedor.toString());
-        return "redirect:/proveedor";
+        System.out.println("SE A EDITADO: " + proveedor.getIdProveedor());
+        return "redirect:/proveedores";
     }
+    
 
     @PostMapping("/agregarproveedor")
     public String guardarProveedor(@ModelAttribute("proveedor")Proveedor proveedor){
@@ -64,7 +65,7 @@ private ProveedorService proveedorService;
     public String eliminarProveedor(@PathVariable Long idProveedor, ModelMap model){
         proveedorService.deleteProveedor(idProveedor);
         System.out.println("SE A ELIMINADO: "+idProveedor);
-        return "RegistrarProveedor";
+        return "redirect:/proveedores";
     }
 
 

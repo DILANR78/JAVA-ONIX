@@ -16,23 +16,13 @@
         <h1 class="text-center text-dark">EDITAR PROVEEDOR</h1>
           <div class="card-body">
             
+              <form action="/editarrol/EditarRol" method="post">
               <div class="form-group">
-                <label>NOMBRE PROVEEDOR: </label>
-                <input type="text" id="nombreproveedor"  name="nombreproveedor" class="form-control" placeholder="NOMBRE PROVEEDOR">
+                <label>NOMBRE ROL: </label>
+                <input type="text" id="nombreRol"  name="nombreRol" class="form-control" placeholder="NOMBRE ROL">
                 <br>
-                <label>TIPO DE DOCUMENTO</label>
-                <br>
-                <input type="text" id="tipodocumentoproveedor"  name="tipodocumentoproveedor" list="datalistOptions" class="form-control" placeholder="C.C o NIT">
-                 <datalist id="datalistOptions">
-                  <option value="C.C">
-                  <option value="NIT">
-                 </datalist>
-                 <br>
-                <label>NUMERO DE DOCUMENTO DEL PROVEEDOR: </label>
-                <input type="text"  id="numeroproveedor"  name="numeroproveedor" class="form-control" placeholder="NUMERO DE DOCUMENTO">
-                 <br>
                 <div class="box-footer">
-                  <a href="/RegistrarProveedor" class="btn btn-primary btn-sm mb3"    onclick="return confirm('Se ha editado tu proveedor')">EDITAR PROVEEDOR</a>
+                  <button type="submit" class="btn btn-primary">EDITAR ROL</button>
                  </div>
               </div>
             </form>

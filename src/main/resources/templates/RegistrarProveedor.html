@@ -38,8 +38,8 @@
             <td th:text="${proveedores.tipoDocumentoProveedor}"></td>
             <td th:text="${proveedores.numeroDocumento}"></td>
             <td>
-              <!-- <a class="btn btn-primary" th:href="@{/editarproveedor/{idProveedor}(idProveedor=${proveedor.idProveedor})}">EDITAR</a> -->
-              <!-- <a class="btn btn-danger" th:href="@{/}"></a> -->
+              <a class="btn btn-primary" th:href="@{/editarproveedor/{idProveedor}(idProveedor=${proveedores.idProveedor})}">EDITAR</a> 
+              <a class="btn btn-danger" th:href="@{/eliminarproveedor/{idProveedor}(idProveedor=${proveedores.idProveedor})}">ELIMINAR</a>
             </td>
           </tr>
         </tbody>

@@ -15,7 +15,7 @@
       </div>
       <div class="row">
         <div class="col-lg-3 d-flex flex-row">
-          <a th:href="@{/Agregarrol}" class="btn btn-primary btn-sm mb-3 mr-2">AGREGAR USUARIO</a>
+          <a th:href="@{/Agregarusuario}" class="btn btn-primary btn-sm mb-3 mr-2">AGREGAR USUARIO</a>
           <a href="#" class="btn btn-success btn-sm mb-3 mr-2">REPORTE EN EXCEL</a>
           <a href="#" class="btn btn-danger btn-sm mb-3">REPORTE EN PDF</a>
         </div>
@@ -24,21 +24,28 @@
       <table class="table">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">ID ROL</th>
+            <th scope="col">ID USUARIO</th>
             <th scope="col">NOMBRE USUARIO</th>
             <th scope="col">APELLIDO USUARIO</th>
             <th scope="col">CORREO USUARIO</th>
-            <th scope="col">CONTRASEÑA USUARIO</th>
+            <!-- <th scope="col">CONTRASEÑA USUARIO</th> -->
+            <th scope="col">ROL</th>
             <th scope="col">ACCIONES</th>
           </tr>
         </thead>
         <tbody>
-          <tr th:each="rol:${roles}">
-            <td name="idRol" id="idRol"  th:text="${rol.idRol}"></td>
-            <td th:text="${rol.nombreRol}"></td>
+          <tr th:each="usuario:${usuarios}">
+            <td name="idUsuario" id="idUsuario"  th:text="${usuario.idUsuario}"></td>
+            <td th:text="${usuario.nombreUsuario}"></td>
+            <td th:text="${usuario.apellidoUsuario}"></td>
+            <td th:text="${usuario.correoUsuario}"></td>
+            <!-- <td th:text="${usuario.contraseñaUsuario}"></td> -->
+             <td th:text="${usuario.rol_idRol.nombreRol}"></td> 
             <td>
-              <!-- <a class="btn btn-primary" th:href="@{/editarproveedor/{idProveedor}(idProveedor=${proveedor.idProveedor})}">EDITAR</a> -->
-              <!-- <a class="btn btn-danger" th:href="@{/}"></a> -->
+              <!-- <a class="btn btn-info" th:href="@{/editarempleado/{idempleado}(idempleado=${empleado.idempleado})}">EDITAR</a>-->
+              <br>
+              <br>
+              <a class="btn btn-danger" th:href="@{/eliminarusuario/{idUsuario}(idUsuario=${usuario.idUsuario})}">ELIMINAR</a> 
             </td>
           </tr>
         </tbody>

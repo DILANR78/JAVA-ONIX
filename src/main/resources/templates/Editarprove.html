@@ -16,6 +16,7 @@
         <h1 class="text-center text-dark">EDITAR PROVEEDOR</h1>
           <div class="card-body">
             
+            <form action="/editarproveedor/EditProveedor" method="post">
               <div class="form-group">
                 <label>NOMBRE PROVEEDOR: </label>
                 <input type="text" id="nombreproveedor"  name="nombreproveedor" class="form-control" placeholder="NOMBRE PROVEEDOR">
@@ -32,7 +33,7 @@
                 <input type="text"  id="numeroproveedor"  name="numeroproveedor" class="form-control" placeholder="NUMERO DE DOCUMENTO">
                  <br>
                 <div class="box-footer">
-                  <a href="/RegistrarProveedor" class="btn btn-primary btn-sm mb3"    onclick="return confirm('Se ha editado tu proveedor')">EDITAR PROVEEDOR</a>
+                  <button type="submit" class="btn btn-primary">EDITAR PROVEEDOR</button>
                  </div>
               </div>
             </form>
