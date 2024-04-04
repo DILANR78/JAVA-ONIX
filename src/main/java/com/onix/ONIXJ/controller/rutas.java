@@ -28,6 +28,11 @@ private ProveedorService proveedorService;
         return "login";
     }
 
+    @GetMapping("/dashboard")
+    public String dashboard(){
+        return "indexdashboard";
+    }
+
     @RequestMapping("/indexdashboard")
     public String indexdashboard(ModelMap model){
         model.addAttribute("proveedor", new Proveedor());

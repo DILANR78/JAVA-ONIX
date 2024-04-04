@@ -12,7 +12,9 @@ import java.util.List;
 import java.util.Optional;
 
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+import com.onix.ONIXJ.entity.Rol;
 import com.onix.ONIXJ.entity.Usuario;
+import com.onix.ONIXJ.service.RolService;
 import com.onix.ONIXJ.service.UsuarioService;
 
 import org.springframework.ui.Model;
@@ -30,6 +32,10 @@ public class UsuarioController {
     @Autowired
     UsuarioService usuarioService;
 
+    @Autowired
+    RolService rolService;
+
+
     @GetMapping("/usuario")
     public String indexUsuario(Model model){
         List<Usuario> usuarios = usuarioService.getUsuario();
@@ -42,7 +48,9 @@ public class UsuarioController {
     public String editarusuario(@PathVariable Long idUsuario, ModelMap model){
         model.addAttribute("usuarios", new Usuario());
         Optional<Usuario> usuarios=usuarioService.getUsuarioById(idUsuario);
-        model.addAttribute("usuario", usuarios.orElse(null));
+        model.addAttribute("usuarios", usuarios.orElse(null));
+        List<Rol> roles = rolService.getRol();
+        model.addAttribute("roles", roles);
         System.out.println("SE A CARGADO EL OBJETO: "+ usuarios);
         return "EditarUsuario";
     }
@@ -64,6 +72,8 @@ public class UsuarioController {
     @GetMapping("/Agregarusuario")
     public String Agregarusuario(ModelMap model){
         model.addAttribute("usuario", new Usuario());
+        List<Rol> roles = rolService.getRol();
+        model.addAttribute("roles", roles);
         return "AgregarUsuario";
     }
 

@@ -19,18 +19,18 @@
             <form action="/editarproveedor/EditProveedor" method="post">
               <div class="form-group">
                 <label>NOMBRE PROVEEDOR: </label>
-                <input type="text" id="nombreproveedor"  name="nombreproveedor" class="form-control" placeholder="NOMBRE PROVEEDOR">
+                <input  th:field="${proveedor.nombreProveedor}" type="text" id="nombreproveedor"  name="nombreproveedor" class="form-control" placeholder="NOMBRE PROVEEDOR">
                 <br>
                 <label>TIPO DE DOCUMENTO</label>
                 <br>
-                <input type="text" id="tipodocumentoproveedor"  name="tipodocumentoproveedor" list="datalistOptions" class="form-control" placeholder="C.C o NIT">
+                <input  th:field="${proveedor.tipoDocumentoProveedor}" type="text" id="tipodocumentoproveedor"  name="tipodocumentoproveedor" list="datalistOptions" class="form-control" placeholder="C.C o NIT">
                  <datalist id="datalistOptions">
                   <option value="C.C">
                   <option value="NIT">
                  </datalist>
                  <br>
                 <label>NUMERO DE DOCUMENTO DEL PROVEEDOR: </label>
-                <input type="text"  id="numeroproveedor"  name="numeroproveedor" class="form-control" placeholder="NUMERO DE DOCUMENTO">
+                <input   th:field="${proveedor.numeroDocumento}"  type="text"  id="numeroproveedor"  name="numeroproveedor" class="form-control" placeholder="NUMERO DE DOCUMENTO">
                  <br>
                 <div class="box-footer">
                   <button type="submit" class="btn btn-primary">EDITAR PROVEEDOR</button>

@@ -36,6 +36,6 @@ public class Usuario {
     //LLAVES FORANEAS
     @ManyToOne
     @JoinColumn(name = "rol_idRol", nullable = true)
-    private Rol rol_idRol;
+    private Rol rol;
     
 }

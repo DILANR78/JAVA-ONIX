@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./public/CSS/estilosproveedor.css">
   </head>
+
+  <style>
+    .btncareverga{
+      margin-right: 100px;
+    }
+  </style>
+
 <body>
  
     <div class="container">
@@ -17,7 +24,8 @@
         <div class="col-lg-3 d-flex flex-row">
           <a th:href="@{/Agregarusuario}" class="btn btn-primary btn-sm mb-3 mr-2">AGREGAR USUARIO</a>
           <a href="#" class="btn btn-success btn-sm mb-3 mr-2">REPORTE EN EXCEL</a>
-          <a href="#" class="btn btn-danger btn-sm mb-3">REPORTE EN PDF</a>
+          <a href="#" class="btn btn-danger btn-sm mb-3 mr-5">REPORTE EN PDF</a>
+          <a id="btncareverga" th:href="@{/dashboard}" class="btn btn-light btn-sm mb-3">ATRAS</a>
         </div>
       </div>
       <br>
@@ -40,7 +48,7 @@
             <td th:text="${usuario.apellidoUsuario}"></td>
             <td th:text="${usuario.correoUsuario}"></td>
             <!-- <td th:text="${usuario.contraseñaUsuario}"></td> -->
-             <td th:text="${usuario.rol_idRol.nombreRol}"></td> 
+             <td th:text="${usuario.rol.nombreRol}"></td> 
             <td>
               <!-- <a class="btn btn-info" th:href="@{/editarempleado/{idempleado}(idempleado=${empleado.idempleado})}">EDITAR</a>-->
               <br>
@@ -49,10 +57,13 @@
             </td>
           </tr>
         </tbody>
+        
       </table>
         </tbody>
       </table>
     </div>
+
+    
 
 
 

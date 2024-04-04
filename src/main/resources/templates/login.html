@@ -96,6 +96,11 @@ h1{
     backdrop-filter: blur(10px); /* Ajusta el valor de blur según la cantidad de desenfoque que desees */
     background-color: rgba(255, 255, 255, 0.5); /* Añade un fondo semitransparente para resaltar el efecto de borrosidad */
   }
+
+
+.mensajeError {
+        color: white;
+  }  
   </style>
 </head>
 <body>
@@ -125,7 +130,7 @@ h1{
             // Verificar que el correo contenga al menos un carácter "@"
             if (correo.indexOf("@") === -1) {
                 // Mostrar mensaje de error y evitar el envío del formulario
-                document.getElementById("mensajeError").innerText = "El correo electrónico debe contener '@'.";
+                document.getElementById("mensajeError").innerText = "El correo electrónico debe contener '@' ";
                 document.getElementById("mensajeError").style.display = "block";
                 return false;
             }
