@@ -14,17 +14,19 @@
             <h1>ONIX <span class="plus-symbol"></span></h1>
         </div>
         <ul class="menu">
-            <li class="menu-item"><span>Dashboard</span></li>
-            <li class="menu-item with-submenu"><span>Ventas</span>
+            <li class="menu-item"><span>DASHBOARD</span></li>
+            <li class="menu-item with-submenu"><span>INVENTARIO</span>
                 <ul class="submenu">
                     <li id="fGenerarVenta"><span>Generar Venta</span></li>
                 </ul>
             </li>
-            <li class="menu-item with-submenu"><span>Inventario</span>
+            <li class="menu-item with-submenu"><span>CATEGORIA</span>
                 <ul class="submenu">
-                    <li id="fInventarioInsumos"><span>Inventario Insumos</span></li>
-                    <li id="fInventarioPTerminos"><span>Inventario Productos</span></li>
+                    <a th:href="@{/Categoria}"><li id="fRegistrarCategoria"><span>TIPO CATEGORIA</span></li></a>
+                    <li id="fGenerarVenta"><span>INSUMOS</span></li>
+                    <li id="fGenerarVenta"><span>PRODUCTOS TERMINADOS</span></li>
                 </ul>
+            </li>
             </li>
             <li class="menu-item with-submenu"><span>USUARIO</span>
                 <ul class="submenu">
@@ -32,10 +34,14 @@
                     <a th:href="@{/usuario}"><li id="fRegistrarUsuario"><span>USUARIOS NUEVOS</span></li></a>
                 </ul>
             </li>
+            <li class="menu-item with-submenu"><span>PROVEEDORES</span>
+                <ul class="submenu">
+                    <a th:href="@{/RegistrarProveedor}"><li id="fRegistrarProveedor"><span>REGISTRAR PROVEEDOR</span></li></a>
+                </ul>
+            </li>
             <li class="menu-item with-submenu"><span>COMPRAS</span>
                 <ul class="submenu">
-                    <a th:href="@{/RegistrarProveedor}"><li id="fRegistrarProveedor"><span>PROVEEDORES</span></li></a>
-                    <li id="fRealizarCompra"><span>Realizar Compra</span></li>
+                    <li id="fRealizarCompra"><span>REGISTRO DE COMPRAS</span></li>
                 </ul>
             </li>
         </ul>

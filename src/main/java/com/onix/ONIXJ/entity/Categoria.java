@@ -19,22 +19,7 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idCategoria;
 
-    @Column(name = "tipoInsumo", nullable = true, columnDefinition = "varchar(55)")
-    private String tipoInsumo;
-
-    @Column(name = "materialInsumo", nullable = true, columnDefinition = "varchar(55)")
-    private String materialInsumo;
-
-    @Column(name = "colorInsumo", nullable = true, columnDefinition = "varchar(55)")
-    private String colorInsumo;
-
-    @Column(name = "tipoProductoTerminado", nullable = true, columnDefinition = "varchar(55)")
-    private String tipoProductoTerminado;
-
-    @Column(name = "colorProductoTerminado", nullable = true, columnDefinition = "varchar(45)")
-    private String colorProductoTerminado;
-
-    @Column(name = "materialProductoTerminado", nullable = true, columnDefinition = "varchar(45)")
-    private String materialProductoTerminado;
+    @Column(name = "tipoCategoria", nullable = true, columnDefinition = "varchar(45)")
+    private String tipoCategoria;
     
 }
