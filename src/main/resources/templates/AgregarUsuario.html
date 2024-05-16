@@ -27,14 +27,14 @@
                 <label>CORREO USUARIO: </label>
                 <input type="text" id="correoUsuario"  name="correoUsuario" class="form-control" placeholder="CORREO USUARIO">
                 <br>
-                <label>ROL</label>
-                <select th:field="*{usuario.rol}" name="rol">
+                <label></label>
+                <select th:field="*{usuario.rol}" name="rol" class="form-control">
                     <option th:each="rol : ${roles}" th:value="${rol.idRol}"  th:text="${rol.nombreRol}"></option>
                 </select>
 
 
                 <!-- <input type="text" id="usuario.rol_idRol.nombreRol"  name="usuario.rol_idRol.nombreRol" list="datalistOptions" class="form-control" placeholder="ROL">
-                <datalist id="datalistOptions">
+                <datalist i d="datalistOptions">
                   <option value="1">
                   <option value="2">
                   <option value="3">

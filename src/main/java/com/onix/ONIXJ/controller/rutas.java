@@ -22,6 +22,11 @@ private ProveedorService proveedorService;
     public String index(){
     return "Indexhomepage";
     }
+    
+    @GetMapping("/paginainicial")
+    public String indexh(){
+    return "Indexhomepage";
+    }
 
     @RequestMapping("/login")
     public String login(){
