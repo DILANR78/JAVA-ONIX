@@ -20,6 +20,11 @@
     list-style: none;
 }
 
+.logo img {
+    width: 130px; /* Ajusta el tamaño según tus necesidades */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
 /* Estilos del cuerpo */
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

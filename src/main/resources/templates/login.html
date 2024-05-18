@@ -29,6 +29,11 @@
     background-color: var(--azul);
 }
 
+.logo img {
+    width: 90px; /* Ajusta el tamaño según tus necesidades */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
 body{
     background-color: var(--azul);
 
@@ -107,7 +112,9 @@ h1{
 
 <div class="caja-login">
     <form class="form-control" action="" method="post" onsubmit="return validarFormulario()">
-        <h1 class="logo">ONIX +</h1>
+        <a th:href="@{/paginainicial}" class="logo">
+            <img src="./public/imagenes/123456789.png" alt="ONIX Logo">
+        </a>
         <div class="form-group">
             <label class="texto" for="exampleInputEmail1">CORREO ELECTRÓNICO</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresar Correo" name="txtCorreo">
@@ -140,6 +147,11 @@ h1{
                 // Redirigir al dashboard
                 window.location.href = "/indexdashboard";
                 return false; // Evitar el envío del formulario
+
+            } else if (correo === "julian1@gmail.com" && contraseña === "12345") {
+                 // Redirigir a otra página
+                    window.location.href = "/indexdashboard2";
+                    event.preventDefault();
             } else {
                 // Mostrar mensaje de error y permitir el envío del formulario
                 document.getElementById("mensajeError").style.display = "block";

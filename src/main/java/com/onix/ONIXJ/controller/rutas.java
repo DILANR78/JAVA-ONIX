@@ -38,6 +38,11 @@ private ProveedorService proveedorService;
     public String dashboard(){
         return "indexdashboard";
     }
+    
+    @GetMapping("/dashboard2")
+    public String dashboard2(){
+        return "indexdashboard2";
+    }
 
     @RequestMapping("/indexdashboard")
     public String indexdashboard(ModelMap model){
@@ -59,6 +64,3 @@ private ProveedorService proveedorService;
         return "RegistrarProveedor";
     }
 }
-
-
-    

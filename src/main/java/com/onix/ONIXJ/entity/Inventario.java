@@ -55,6 +55,6 @@ public class Inventario{
     private Categoria categoria;
 
     @ManyToOne
-    @JoinColumn(name = "compras_idCompro", nullable = true)
-    private Compras compra;
+    @JoinColumn(name = "proveedor_idProveedor", nullable = true)
+    private Proveedor proveedor;
 }
