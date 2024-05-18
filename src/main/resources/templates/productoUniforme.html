@@ -20,7 +20,7 @@
             <a href="Indexhomepage.html" class="logo">ONIX +</a>
             <input type="checbox" id="menu"/>
             <label for="menu">
-                <img src="../static/public/imagenes/menu.png" class="menu-icono" alt="menu">
+                <img src="./public/imagenes/menu.png" class="menu-icono" alt="menu">
             </label>
             <nav class="navbar">
                 <ul>
@@ -33,7 +33,7 @@
             <div>
                 <ul>
                     <li class="submenu">
-                        <button class="icono-login"><ion-icon name="person"></ion-icon></button>
+                        <a href="/login"><button class="icono-login"><ion-icon name="person"></ion-icon></button></a>
                         </div>
                     </li>
                 </ul>
@@ -46,7 +46,7 @@
     <table>
         <tr >
             <td class="product-image">
-                <img src="../static/public/imagenes/uniforme.jpg" alt="Producto">
+                <img src="./public/imagenes/uniforme.jpg" alt="Producto">
             </td>
             <td>
                 <h2>Uniformes Colegiales</h2>
@@ -63,7 +63,7 @@
         </tr>
     </table>
     <div class="botones">
-        <a href="Indexhomepage.html"class="boton">Volver</a>
+        <a th:href="@{/paginainicial}" class="boton">Volver</a>
         <a href="https://api.whatsapp.com/send?phone=3053656257&text=Hola, me gustaria Obtener más información"class="boton">Cotización</a>
     </div>
         

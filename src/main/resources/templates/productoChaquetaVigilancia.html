@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/public/CSS/estilosproductos.css">
+    <link rel="stylesheet" href="./public/CSS/estilosproductos.css">
     <link rel="stylesheet" href="../static/public/CSS/botonwhasapp.css">
+    <link rel="icon" href="./public/imagenes/logo.png">
 </head>
 <body>
     
     <header class="header">
         
         <div class="menu container">
-            <a href="Indexhomepage.html" class="logo">ONIX +</a>
+            <a th:href="@{/paginainicial}" class="logo">
+                <img src="./public/imagenes/logo.png" alt="ONIX Logo">
+            </a>
             <input type="checbox" id="menu"/>
             <label for="menu">
                 <img src="../static/public/imagenes/menu.png" class="menu-icono" alt="menu">
@@ -32,7 +35,7 @@
             <div>
                 <ul>
                     <li class="submenu">
-                        <button class="icono-login"><ion-icon name="person"></ion-icon></button>
+                        <a href="/login"><button class="icono-login"><ion-icon name="person"></ion-icon></button></a>
                         </div>
                     </li>
                 </ul>
@@ -45,7 +48,7 @@
     <table>
         <tr >
             <td class="product-image">
-                <img src="../static/public/imagenes/chaquetaVigilante.jpg" alt="Producto">
+                <img src="./public/imagenes/chaquetaVigilante.jpg" alt="Producto">
             </td>
             <td>
                 <h2>Chaqueta de Vigilancia</h2>
@@ -62,7 +65,7 @@
         </tr>
     </table>
     <div class="botones">
-        <a href="Indexhomepage.html"class="boton">Volver</a>
+        <a th:href="@{/paginainicial}" class="boton">Volver</a>
         <a href="https://api.whatsapp.com/send?phone=3053656257&text=Hola, me gustaria Obtener más información"class="boton">Cotización</a>
     </div>
         
