@@ -69,5 +69,4 @@ public class CategoriaController {
         return "redirect:/Categoria";
     }
     
-    
 }
