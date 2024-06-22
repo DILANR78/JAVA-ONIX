@@ -11,11 +11,11 @@
  
     <div class="container">
       <div class="row text-center d-flex align-items-center">
-          <h1 class="text-align: center;">PROVEEDOR</h1>
+          <h1 class="text-align: center;">COMPRA</h1>
       </div>
       <div class="row">
         <div class="col-lg-3 d-flex flex-row">
-          <a th:href="@{/Agregarproveedor}" class="btn btn-primary btn-sm mb-3 mr-2">REGISTRAR COMPRA</a>
+          <a th:href="@{/Agregarcompra}" class="btn btn-primary btn-sm mb-3 mr-2">REGISTRAR COMPRA</a>
           <a href="#" class="btn btn-success btn-sm mb-3 mr-2">REPORTE EN EXCEL</a>
           <a href="#" class="btn btn-danger btn-sm mb-3 mr-5">REPORTE EN PDF</a>
           <a id="btncareverga" th:href="@{/dashboard}" class="btn btn-light btn-sm mb-3">ATRAS</a>
@@ -27,20 +27,23 @@
           <tr>
             <th scope="col">ID COMPRA</th>
             <th scope="col">DESCRIPCION COMPRA</th>
+            <th scope="col">NOBRE DEL PROVEEDOR</th>
             <th scope="col">VALOR COMPRA</th>
             <th scope="col">FECHA COMPRA</th>
             <th scope="col">ACCIONES</th>
           </tr>
         </thead>
         <tbody>
-          <tr th:each="proveedores:${proveedor}">
-            <td name="idProveedor" id="idProveedor"  th:text="${proveedores.idProveedor}"></td>
-            <td th:text="${proveedores.nombreProveedor}"></td>
-            <td th:text="${proveedores.tipoDocumentoProveedor}"></td>
-            <td th:text="${proveedores.numeroDocumento}"></td>
+          <tr th:each="compras:${compra}">
+            <td name="idCompra" id="idCompra"  th:text="${compras.idCompra}"></td>
+            <td th:text="${compras.nombreProveedor}"></td>
+            <td th:text="${compras.descripcionCompra}"></td>
+            <td th:text="${compras.proveedores.nombreProveedor}"></td>
+            <td th:text="${compras.valorToltalCompra}"></td>
+            <td th:text="${compras.fechaCompra}"></td>
             <td>
               <!-- <a class="btn btn-primary" th:href="@{/editarproveedor/{idProveedor}(idProveedor=${proveedores.idProveedor})}">EDITAR</a>  -->
-              <a class="btn btn-danger" th:href="@{/eliminarproveedor/{idProveedor}(idProveedor=${proveedores.idProveedor})}">ELIMINAR</a>
+              <a class="btn btn-danger" th:href="@{/eliminarcompra/{idCompra}(idCompra=${compras.idCompra})}">ELIMINAR</a>
             </td>
           </tr>
         </tbody>
