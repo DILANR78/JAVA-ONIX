@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.onix.ONIXJ.entity.Rol;
 import com.onix.ONIXJ.service.RolService;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,9 +42,10 @@ public class RolController {
     }
 
     @PostMapping("/editarrol/EditarRol")
-    public String postMethoEdit(@ModelAttribute("roles") Rol rol){
+    public String postMethoEdit(@ModelAttribute("roles") Rol rol, Model model){
+    model.addAttribute("rol", new Rol());
     rolService.saveOrUpdate(rol);
-    System.out.println("Se a editado: "+ rol);
+    System.out.println("Se a editado: "+ rol.getIdRol());
     return "redirect:/rol";
     }
 

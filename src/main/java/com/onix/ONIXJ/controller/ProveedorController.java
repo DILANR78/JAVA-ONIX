@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.onix.ONIXJ.entity.Proveedor;
+import com.onix.ONIXJ.entity.Usuario;
 import com.onix.ONIXJ.service.ProveedorService;
 
 
@@ -41,7 +43,8 @@ private ProveedorService proveedorService;
     }
 
     @PostMapping("/editarproveedor/EditProveedor")
-    public String postMethodEdit(@ModelAttribute("proveedor") Proveedor proveedor) {
+    public String postMethodEdit(@ModelAttribute("proveedor") Proveedor proveedor, Model model) {
+        model.addAttribute("proveedor", new Proveedor());
         proveedorService.saveOrUpdate(proveedor);
         System.out.println("SE A EDITADO: " + proveedor.getIdProveedor());
         return "redirect:/proveedores";

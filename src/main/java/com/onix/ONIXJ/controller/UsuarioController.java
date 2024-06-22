@@ -52,7 +52,8 @@ public class UsuarioController {
     }
     
     @PostMapping("editarusuario/EditarUsuario")
-    public String postMethoEdit(@ModelAttribute("usuarios")Usuario usuario){
+    public String postMethoEdit(@ModelAttribute("usuarios")Usuario usuario, Model model){
+        model.addAttribute("usuarios", new Usuario());
         usuarioService.saveOrUpdate(usuario);
         System.out.println("Se a editado: "+ usuario);
         return "redirect:/usuario";

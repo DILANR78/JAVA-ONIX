@@ -18,8 +18,9 @@
             
               <form action="/editarrol/EditarRol" method="post">
               <div class="form-group">
+                <input type="hidden" th:field="${rol.idRol}" id="idRol" name="idRol"/>
                 <label>NOMBRE ROL: </label>
-                <input type="text" id="nombreRol"  name="nombreRol" class="form-control" placeholder="NOMBRE ROL">
+                <input th:field="${rol.nombreRol}"  type="text" id="nombreRol"  name="nombreRol" class="form-control" placeholder="NOMBRE ROL">
                 <br>
                 <div class="box-footer">
                   <button type="submit" class="btn btn-primary">EDITAR ROL</button>

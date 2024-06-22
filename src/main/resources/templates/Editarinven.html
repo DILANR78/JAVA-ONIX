@@ -13,27 +13,17 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-        <h1 class="text-center text-dark">EDITAR USUARIO</h1>
+        <h1 class="text-center text-dark">EDITAR INVENTARIO</h1>
           <div class="card-body">
             
+              <form action="/editarinventario/Editarinventario" method="post">
               <div class="form-group">
-                <input type="hidden" th:field="${usuarios.idUsuario}" name="idUsuario" id="idUsuario"/>
-                <label>NOMBRE USUARIO</label>
-                <input th:field="${usuarios.nombreUsuario}" type="text" id="nombreUsuario"  name="nombreUsuario" class="form-control" placeholder="NOMBRE USUARIO">
-                <br>
-                <label>APELLIDO USUARIO</label>
-                <input th:field="${usuarios.apellidoUsuario}" type="text" id="apellidoUsuario"  name="apellidoUsuario" class="form-control" placeholder="APELLIDO USUARIO">
-                <br>
-                <label>CORREO USUARIO</label>
-                <input th:field="${usuarios.correoUsuario}" type="text" id="correoUsuario"  name="correoUsuario" class="form-control" placeholder="CORREO USUARIO">
-                 <br>
-                <label>ROL</label>
-                <select th:field="${usuarios.rol}" name="rol" class="form-control" placeholder="NOMBRE ROL">
-                  <option th:each="rol : ${roles}" th:value="${rol.idRol}"  th:text="${rol.nombreRol}" selected></option>
-                </select>
+                <input type="hidden" th:field="${inventario.idInventario} id="idInventario" name="idInventario"/>
+                <label>CATEGORIA</label>
+                <input th:field="${rol.nombreRol}"  type="text" id="nombreRol"  name="nombreRol" class="form-control" placeholder="NOMBRE ROL">
                 <br>
                 <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">EDITAR USUARIO</button>
+                  <button type="submit" class="btn btn-primary">EDITAR ROL</button>
                  </div>
               </div>
             </form>
