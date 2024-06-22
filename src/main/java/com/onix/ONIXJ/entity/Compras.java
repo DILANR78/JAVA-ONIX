@@ -1,3 +1,4 @@
+
 //COMPRAS
 
 package com.onix.ONIXJ.entity;
@@ -25,7 +26,7 @@ public class Compras {
     @Column(name = "descripcionCompra", nullable = true, columnDefinition = "varchar(55)")
     private String descripcionCompra;
 
-    @Column(name = "valorToltalCompra", nullable = true, columnDefinition = "int(11)")
+    @Column(name = "valorToltalCompra", nullable = true, columnDefinition = "int")
     private int valorToltalCompra;
 
     @Column(name = "fechaCompra", nullable = true, columnDefinition = "date")
@@ -34,6 +35,6 @@ public class Compras {
     //LLAVES FORANEAS
     @ManyToOne
     @JoinColumn(name = "proveedor_idProveedor", nullable = true)
-    private Proveedor proveedor;;
+    private Proveedor proveedor;
     
 }

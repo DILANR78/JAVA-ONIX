@@ -36,9 +36,8 @@
         <tbody>
           <tr th:each="compras:${compra}">
             <td name="idCompra" id="idCompra"  th:text="${compras.idCompra}"></td>
-            <td th:text="${compras.nombreProveedor}"></td>
             <td th:text="${compras.descripcionCompra}"></td>
-            <td th:text="${compras.proveedores.nombreProveedor}"></td>
+            <td th:text="${compras.proveedor.nombreProveedor}"></td>
             <td th:text="${compras.valorToltalCompra}"></td>
             <td th:text="${compras.fechaCompra}"></td>
             <td>

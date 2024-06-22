@@ -79,9 +79,9 @@ ProveedorService proveedorService;
     }
 
     @RequestMapping("/eliminarcompra/{idCompra}")
-    public String eliminarCompra(@PathVariable Long idCompras, ModelMap model) {
-        registrarCompraService.deleteCompras(idCompras);
-        System.out.println("SE A ELIMINADO: "+idCompras);
+    public String eliminarCompra(@PathVariable Long idCompra, ModelMap model) {
+        registrarCompraService.deleteCompras(idCompra);
+        System.out.println("SE A ELIMINADO: "+idCompra);
         return "redirect:/compras";
     }
     

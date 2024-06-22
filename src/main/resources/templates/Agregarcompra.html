@@ -13,27 +13,32 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-        <h1 class="text-center text-dark">AGREGAR PROVEEDOR</h1>
+        <h1 class="text-center text-dark">AGREGAR COMPRA</h1>
           <div class="card-body">
 
               <form action="/agregarcompras" method="post">
               <div class="form-group">
-                <label>NOMBRE PROVEEDOR: </label>
-                <input type="text" id="nombreProveedor"  name="nombreProveedor" class="form-control" placeholder="NOMBRE PROVEEDOR">
+                <label>DESCRIPCION DE LA COMPRA</label>
+                <input type="text" id="descripcionCompra"  name="descripcionCompra" class="form-control" placeholder="DESCRIPCION">
                 <br>
-                <label>TIPO DE DOCUMENTO</label>
+
+                <!-- LLAVE FORANEA -->
+                <label>NOMBRE DEL PROVEEDOR</label>
+                <select th:field="*{compra.proveedor}" name="proveedor" class="form-control">
+                    <option th:each="proveedores : ${proveedor}" th:value="${proveedores.idProveedor}"  th:text="${proveedores.nombreProveedor}"></option>
+                </select>
                 <br>
-                <input type="text" id="tipoDocumentoProveedor"  name="tipoDocumentoProveedor" list="datalistOptions" class="form-control" placeholder="C.C o NIT">
-                 <datalist id="datalistOptions">
-                  <option value="C.C">
-                  <option value="NIT">
-                 </datalist>
+
+                <label>VALOR DE LA COMPRA</label>
+                <input type="number" id="valorToltalCompra"  name="valorToltalCompra" class="form-control" placeholder="VALOR DE LA COMPRA">
+                <br>
                  <br>
-                <label>NUMERO DE DOCUMENTO DEL PROVEEDOR: </label>
-                <input type="text"  id="numeroDocumento"  name="numeroDocumento" class="form-control" placeholder="NUMERO DE DOCUMENTO">
+                <label>FECHA DE LA COMPRA</label>
+                <input type="date"  id="fechaCompra"  name="fechaCompra" class="form-control">
                  <br>
+
                 <div class="box-footer">
-                  <button  type="submit" class="btn btn-primary">GUARDAR PROVEEDOR</button>
+                  <button  type="submit" class="btn btn-primary">REGISTRAR COMPRA</button>
                  </div>
               </div>
             </form>
