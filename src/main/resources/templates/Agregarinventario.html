@@ -16,7 +16,7 @@
         <h1 class="text-center text-dark">AGREGAR USUARIO</h1>
           <div class="card-body">
 
-              <form action="/agregarusuario" method="post">
+              <form action="/agregarinventario" method="post">
               <div class="form-group">
                 <label>NOMBRE USUARIO: </label>
                 <input type="text" id="nombreUsuario"  name="nombreUsuario" class="form-control" placeholder="NOMBRE USUARIO">
@@ -29,7 +29,7 @@
                 <br>
 
                 <!-- LLAVE FORANEA -->
-                <label style="color: black; display: block; text-align: left;">ROL</label>
+                <label></label>
                 <select th:field="*{usuario.rol}" name="rol" class="form-control" placeholder="NOMBRE ROL">
                     <option th:each="rol : ${roles}" th:value="${rol.idRol}"  th:text="${rol.nombreRol}"></option>
                 </select>
