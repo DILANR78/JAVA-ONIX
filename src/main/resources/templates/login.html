@@ -1,168 +1,90 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/CSS/estiloslogin.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <title>ONIX +</title>
-    <link rel="icon" href="./public/imagenes/logo.png">
+    <link rel="icon" href="./public/imagenes/12323.jpg">
 
 
-    <style>
-    :root {
-    --negro: #1b1d24;
-    --verde1: #365A08;
-    --verde2: #5d9d0b;
-    --verde3: #72EB3A;
-    --blanco: #f1f1f1;
-    --rojo: #FF0000;
-    --azul: #1a333e;
-    --azuleshover: #2196f3;
-    --grisclaro: #4E4B5076;
-}
 
-* {
-    margin: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    background-color: var(--azul);
-}
-
-.logo img {
-    width: 90px; /* Ajusta el tamaño según tus necesidades */
-    height: auto; /* Mantiene la proporción de la imagen */
-}
-
-body{
-    background-color: var(--azul);
-
-}
-.caja-login {
-    width: 600px;
-    margin: 10% auto;
-    position: relative;
-    z-index: 3;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.651); /* Fondo semitransparente solo para .caja-login */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.form-control{
-    z-index: 6;
-}
-
-
-.form-group {
-    margin-bottom: 20px;
-    width: 530px;
-    z-index: 4;
-    text-align: left;
-    background-color: rgba(182, 176, 176, 0.651) !important;
-    color: var(--negro)  !important;
-    text-decoration: none !important;
-}
-
-.form-label {
-    background-color: rgba(255, 255, 255, 0.651) !important;
-}
-
-.texto {
-    background-color: transparent;
-}
-
-h1{
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.651);
-}
-
-.btn-2{
-    display: inline-block;
-    padding: 7px 10px;
-    background-color: var(--negro);
-    color: var(--blanco);
-    border-radius: 5px;
-    font-size: 15px;
-    text-decoration: none;
-    cursor: pointer;
-    margin: 0  auto;
-}
-
-.btn-2:hover {
-    color: var(--azuleshover);
-}
-
-.caja-login {
-    border: 2px solid var(--negro);
-    padding: 20px;
-    border-radius: 5px;
-    backdrop-filter: blur(10px); /* Ajusta el valor de blur según la cantidad de desenfoque que desees */
-    background-color: rgba(255, 255, 255, 0.5); /* Añade un fondo semitransparente para resaltar el efecto de borrosidad */
-  }
-
-
-.mensajeError {
-        color: white;
-  }  
-  </style>
-
-  
 </head>
 <body>
+<div class="background"></div>
+<div class="centering">
+    <form class="my-form" action="" method="post" onsubmit="return validarFormulario()">
+        <div class="login-welcome-row">
+            <img class="login-welcome" src="./public/imagenes/123456789.png" alt="Onix Logo">
+            <!-- optimize the image in production -->
+            <h1>Bienvenido</h1>
+        </div>
+        <div class="text-field">
+            <label for="exampleInputEmail1">Email:</label>
+            <input
+                    aria-label="Email"
+                    type="email"
+                    id="exampleInputEmail1"
+                    name="txtCorreo"
+                    placeholder="Ingresar Correo"
+                    required>
+        </div>
 
-<div class="caja-login">
-    <form class="form-control" action="" method="post" onsubmit="return validarFormulario()">
-        <a th:href="@{/paginainicial}" class="logo">
-            <img src="./public/imagenes/123456789.png" alt="ONIX Logo">
-        </a>
-        <div class="form-group">
-            <label class="texto" for="exampleInputEmail1">CORREO ELECTRÓNICO</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresar Correo" name="txtCorreo">
+        <div class="text-field">
+            <label for="exampleInputPassword1">Password:</label>
+            <input
+                    id="exampleInputPassword1"
+                    type="password"
+                    aria-label="Password"
+                    name="txtContraseña"
+                    placeholder="Ingresa Contraseña"
+                    required>
+
         </div>
-        <div class="form-group">
-            <label class="texto" for="exampleInputPassword1">CONTRASEÑA</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingresa Contraseña" name="txtContraseña">
-        </div>
-        <button type="submit" class="btn-2">INGRESAR</button>
+        <input type="submit" class="my-form__button" value="Login" >
     </form>
+</div>
+</body>
 
-    <!-- Agregar mensaje de error usando JavaScript -->
-    <p id="mensajeError" class="error-message" style="display:none;">Credenciales incorrectas. Por favor, inténtalo de nuevo.</p>
 
-    <script>
-        function validarFormulario() {
-            var correo = document.getElementById("exampleInputEmail1").value;
-            var contraseña = document.getElementById("exampleInputPassword1").value;
-    
-            // Verificar que el correo contenga al menos un carácter "@"
-            if (correo.indexOf("@") === -1) {
-                // Mostrar mensaje de error y evitar el envío del formulario
-                document.getElementById("mensajeError").innerText = "El correo electrónico debe contener '@' ";
-                document.getElementById("mensajeError").style.display = "block";
-                return false;
-            }
-    
-            // Agregar tu lógica condicional aquí
-            if (correo === "dilan1@gmail.com" && contraseña === "1234") {
-                // Redirigir al dashboard
-                window.location.href = "/indexdashboard";
-                return false; // Evitar el envío del formulario
+<!-- Agregar mensaje de error usando JavaScript -->
+<p id="mensajeError" class="error-message" style="display:none;">Credenciales incorrectas. Por favor, inténtalo de nuevo.</p>
 
-            } else if (correo === "julian1@gmail.com" && contraseña === "12345") {
-                 // Redirigir a otra página
-                    window.location.href = "/indexdashboard2";
-                    event.preventDefault();
-            } else {
-                // Mostrar mensaje de error y permitir el envío del formulario
-                document.getElementById("mensajeError").style.display = "block";
-                return true;
-            }
+<script>
+    function validarFormulario() {
+        var correo = document.getElementById("exampleInputEmail1").value;
+        var contraseña = document.getElementById("exampleInputPassword1").value;
+
+        // Verificar que el correo contenga al menos un carácter "@"
+        if (correo.indexOf("@") === -1) {
+            // Mostrar mensaje de error y evitar el envío del formulario
+            document.getElementById("mensajeError").innerText = "El correo electrónico debe contener '@' ";
+            document.getElementById("mensajeError").style.display = "block";
+            return false;
         }
-    </script>
-    
+
+        // Agregar tu lógica condicional aquí
+        if (correo === "dilan1@gmail.com" && contraseña === "1234") {
+            // Redirigir al dashboard
+            window.location.href = "/indexdashboard";
+            return false; // Evitar el envío del formulario
+
+        } else if (correo === "julian1@gmail.com" && contraseña === "12345") {
+             // Redirigir a otra página
+                window.location.href = "/indexdashboard2";
+                event.preventDefault();
+        } else {
+            // Mostrar mensaje de error y permitir el envío del formulario
+            document.getElementById("mensajeError").style.display = "block";
+            return true;
+        }
+    }
+</script>
+
 </div>
 
 </body>
