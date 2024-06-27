@@ -1,8 +1,11 @@
+//CONTROLER DE ROL
+
 package com.onix.ONIXJ.controller;
+
+// TODAS LAS IMPORTANCIONES NECESARIAS
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,12 +14,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.onix.ONIXJ.entity.Rol;
 import com.onix.ONIXJ.service.RolService;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+//CRUD DE ROL Y AYUDA A MANEJAR LAS PETICIONES DEL SERVICE
 
 @Controller
 public class RolController {
@@ -70,7 +72,3 @@ public class RolController {
     }
 
 }
-
-    
-
-

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./public/CSS/estilosproveedor.css">
   </head>
+
+<!-- CREACION DEL LA PLANTILLA -->
+
 <body>
+
   <br>
+
   <br>
+
+  <!-- TITULO DE LA PLANTILLA -->
+
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
         <h1 class="text-center text-dark">AGREGAR USUARIO</h1>
           <div class="card-body">
+
+              <!-- HACEMOS LA PETICION POST DEL MODULO USUARIOS -->
 
               <form action="/agregarusuario" method="post">
               <div class="form-group">
@@ -29,15 +40,21 @@
                 <br>
 
                 <!-- LLAVE FORANEA -->
+
                 <label style="color: black; display: block; text-align: left;">ROL</label>
                 <select th:field="*{usuario.rol}" name="rol" class="form-control" placeholder="NOMBRE ROL">
                     <option th:each="rol : ${roles}" th:value="${rol.idRol}"  th:text="${rol.nombreRol}"></option>
                 </select>
+
+                <!-- LLAVE FORANEA -->
                  <br>
                 
+                <!-- BOTON DE GUARDAR USUARIO  -->
+
                 <div class="box-footer">
                   <button  type="submit" class="btn btn-primary">GUARDAR USUARIO</button>
                  </div>
+                 
               </div>
             </form>
           </div>
@@ -56,5 +73,7 @@
     <script src="/static/JS/formularios.js"></script>
     <!-- <script src="../JS/scripdashboard.js"></script> -->
 </body>
-<script></script>
+
+<!-- FIN DE LA PLANTILLA -->
+
 </html>

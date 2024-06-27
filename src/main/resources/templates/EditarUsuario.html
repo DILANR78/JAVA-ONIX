@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./public/CSS/estilosproveedor.css">
   </head>
+
+<!-- CREACION DEL LA PLANTILLA -->
+
 <body>
+
   <br>
+
   <br>
+
+  <!-- TITULO DE LA PLANTILLA -->
+
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
         <h1 class="text-center text-dark">EDITAR USUARIO</h1>
           <div class="card-body">
-            
+
+              <!-- HACEMOS LA PETICION POST DEL MODULO COMPRAS -->
+
               <div class="form-group">
                 <input type="hidden" th:field="${usuarios.idUsuario}" name="idUsuario" id="idUsuario"/>
                 <label>NOMBRE USUARIO</label>
@@ -27,10 +38,14 @@
                 <label>CORREO USUARIO</label>
                 <input th:field="${usuarios.correoUsuario}" type="text" id="correoUsuario"  name="correoUsuario" class="form-control" placeholder="CORREO USUARIO">
                  <br>
+
+                 <!-- LLAVE FORANEA -->
                 <label>ROL</label>
                 <select th:field="${usuarios.rol}" name="rol" class="form-control" placeholder="NOMBRE ROL">
                   <option th:each="rol : ${roles}" th:value="${rol.idRol}"  th:text="${rol.nombreRol}" selected></option>
                 </select>
+                <!-- LLAVE FORANEA -->
+
                 <br>
                 <div class="box-footer">
                   <button type="submit" class="btn btn-primary">EDITAR USUARIO</button>
@@ -53,5 +68,7 @@
     <script src="/static/JS/formularios.js"></script>
     <!-- <script src="../JS/scripdashboard.js"></script> -->
 </body>
-<script></script>
+
+<!-- FIN DE LA PLANTILLA -->
+
 </html>

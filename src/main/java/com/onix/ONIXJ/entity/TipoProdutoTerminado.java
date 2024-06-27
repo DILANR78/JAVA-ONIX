@@ -1,7 +1,8 @@
-//PRODUCTO TERMINADO
-
+//TABLA DE PRODUCTO TERMINADO
 
 package com.onix.ONIXJ.entity;
+
+// TODAS LAS IMPORTANCIONES NECESARIAS
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,10 +14,13 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
+// CREACION DE LAS TABLAS PARA LA BD
+
 @Data
 @Entity
 @Table(name = "tipoProductoTerminado")
 public class TipoProdutoTerminado {
+    
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long idProductoTerminado;

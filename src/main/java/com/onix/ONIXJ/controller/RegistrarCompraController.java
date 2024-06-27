@@ -1,32 +1,26 @@
+//CONTROLER DE REGISTRAR COMPRA
+
 package com.onix.ONIXJ.controller;
+
+// TODAS LAS IMPORTANCIONES NECESARIAS
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-
 import com.onix.ONIXJ.entity.Compras;
 import com.onix.ONIXJ.entity.Proveedor;
 import com.onix.ONIXJ.service.RegistrarCompraService;
 import com.onix.ONIXJ.service.ProveedorService;
-
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
-
-
-
-
+//CRUD DE REGISTRAR COMPRA Y AYUDA A MANEJAR LAS PETICIONES DEL SERVICE
 
 @Controller
 public class RegistrarCompraController {

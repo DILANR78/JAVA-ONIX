@@ -1,4 +1,8 @@
+//CONTROLER DE PROVEEDOR
+
 package com.onix.ONIXJ.controller;
+
+// TODAS LAS IMPORTANCIONES NECESARIAS
 
 import java.util.List;
 import java.util.Optional;
@@ -11,13 +15,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.onix.ONIXJ.entity.Proveedor;
-import com.onix.ONIXJ.entity.Usuario;
 import com.onix.ONIXJ.service.ProveedorService;
 
-
+//CRUD DE PROVEEDOR Y AYUDA A MANEJAR LAS PETICIONES DEL SERVICE
 
 @Controller
 public class ProveedorController {
