@@ -14,6 +14,7 @@
 /* Reset y estilos generales */
 * {
     margin: 0;
+    padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     box-sizing: border-box;
     text-decoration: none;
@@ -29,6 +30,8 @@
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-image: linear-gradient(to bottom, #1b1d24, #1b3847, #01585e);
+    width: 100%;
+    height: 100vh;
 }
 
 /* Imágenes */
@@ -341,7 +344,7 @@ td {
     color: var(--negro);
 }
 
-/* Sección de blogs */
+/* Sección de blgs */
 .blog {
     display: flex;
     justify-content: space-between;
@@ -370,9 +373,94 @@ td {
 }
 
 /* Pie de página */
+
+section{
+    padding: 80px 12% 60px;
+}
+
+
 .footer {
-    padding: 50px 0;
-    background-color: var(--negro);
+    display: grid;
+    grid-template-column: repeat(auto-fit, minmax(200px, auto));
+    gap: 3rem;
+    background: var(--negro);
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.sec-1 img{
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.sec-1 p {
+    max-width: 330px;
+    color: #95A5A6;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin: 18px 0;
+}
+
+.sec-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Ajusta el padding según sea necesario */
+}
+
+.footer-icon {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Añadido para separar los iconos */
+}
+.footer-icon i {
+    width: 40px;
+    height: 40px;
+    background: var(--grisclaro);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all .42s;
+}
+
+
+.footer-icon i:hover{
+    background: var(--azuleshover);
+    transform: translateY(-5px);
+}
+
+.footer h4{
+    color: #95A5A6;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+}
+
+.footer li a{
+    color: #DDD9D9;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 38px;
+    transition: all .42s;
+}
+
+.footer li a:hover{
+    color: var(--grisclaro);
+}
+
+.footer li{
+    transition: all .42s;
+}
+
+.footer li:hover{
+    transform: translateX(5px);
 }
 
 /* Contenido del pie de página */
@@ -382,17 +470,23 @@ td {
 }
 
 /* Enlaces en el pie de página */
-.link h3 {
+.link h4 {
     font-size: 18px;
-    color: var(--blanco);
+    color: #95A5A6;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-transform: uppercase;
     margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.link li {
+    list-style: none; /* Para eliminar el punto de la lista si no lo deseas */
+    margin-top: 10px; /* Añadido para dar margen superior */
 }
 
 .link a {
     font-size: 16px;
-    color: var(--blanco);
+    color: #85929E;
     display: block;
     margin-bottom: 10px;
 }
@@ -451,7 +545,7 @@ td {
 }
 
 /* Estilos para enlaces en lista */
-.link ul li a {
+.link li a {
     text-decoration: none;
 }
 
@@ -467,8 +561,10 @@ td {
 
 /* Estilos Floter*/
 
-.link ul li:not(:first-child) a:hover {
+.link li:not(:first-child) a:hover {
     color: var(--azuleshover); /* Cambia el color al hacer hover */
+    transform: translateX(5px);
+    transition: all .42s;
 }
 
 /* Estilos login */
@@ -824,6 +920,14 @@ td {
 
     .blog-1 {
         margin-bottom: 10px;
+    }
+
+    section{
+        padding: 80px 12% 25px;
+    }
+
+    .footer li a {
+        line-height: 28px;
     }
 
     .footer {
