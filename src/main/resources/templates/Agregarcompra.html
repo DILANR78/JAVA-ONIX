@@ -29,22 +29,24 @@
 
               <form action="/agregarcompras" method="post">
               <div class="form-group">
-                <label>DESCRIPCION DE LA COMPRA</label>
+                <label style="color: black; display: block; text-align: left;">DESCRIPCION DE LA COMPRA</label>
                 <input type="text" id="descripcionCompra"  name="descripcionCompra" class="form-control" placeholder="DESCRIPCION">
                 <br>
 
                 <!-- LLAVE FORANEA -->
-                <label>NOMBRE DEL PROVEEDOR</label>
+                <label style="color: black; display: block; text-align: left;">NOMBRE DEL PROVEEDOR</label>
                 <select th:field="*{compra.proveedor}" name="proveedor" class="form-control">
                     <option th:each="proveedores : ${proveedor}" th:value="${proveedores.idProveedor}"  th:text="${proveedores.nombreProveedor}"></option>
                 </select>
+                <!-- LLAVE FORANEA -->
+
                 <br>
 
-                <label>VALOR DE LA COMPRA</label>
+                <label style="color: black; display: block; text-align: left;">VALOR DE LA COMPRA</label>
                 <input type="number" id="valorToltalCompra"  name="valorToltalCompra" class="form-control" placeholder="VALOR DE LA COMPRA">
                 <br>
                  <br>
-                <label>FECHA DE LA COMPRA</label>
+                <label style="color: black; display: block; text-align: left;">FECHA DE LA COMPRA</label>
                 <input type="date"  id="fechaCompra"  name="fechaCompra" class="form-control">
                  <br>
 

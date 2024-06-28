@@ -22,20 +22,21 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-        <h1 class="text-center text-dark">EDITAR PROVEEDOR</h1>
+        <h1 class="text-center text-dark">EDITAR CATEGORIA</h1>
           <div class="card-body">
 
               <!-- HACEMOS LA PETICION POST DE EDITAR DEL MODULO CATEGORIA -->
 
-              <form action="/editarrol/EditarRol" method="post">
+              <form action="/editarcategoria/EditarCate" method="post">
               <div class="form-group">
-                <label>NOMBRE ROL: </label>
-                <input type="text" id="nombreRol"  name="nombreRol" class="form-control" placeholder="NOMBRE ROL">
+                <label>TIPO DE CATEGORIA</label>
+                <input th:field="${categorias.tipoCategoria}" type="text" id="tipoCategoria"  name="tipoCategoria" class="form-control" placeholder="TIPO DE CATEGORIA">
+ 
                 <br>
 
                 <!-- BOTON DE EDITAR CATEGORIA -->
                 <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">EDITAR ROL</button>
+                  <button type="submit" class="btn btn-primary">EDITAR CATEGORIA</button>
                  </div>
                  
               </div>
