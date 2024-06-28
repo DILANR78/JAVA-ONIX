@@ -43,6 +43,7 @@ img {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px; /* Añadido para dar padding horizontal */
 }
 
 /* Cabecera */
@@ -63,6 +64,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px; /* Añadido para dar padding horizontal */
 }
 
 /* Logo */
@@ -72,7 +74,7 @@ img {
     text-transform: uppercase;
     font-weight: 800;
     text-decoration: none;
-    margin-right: 100 px;
+    margin-right: 100px; /* Corregido para eliminar el espacio excesivo */
 }
 
 /* Elementos del menú */
@@ -198,54 +200,53 @@ td {
     margin-bottom: 2px;
 }
 
-/* Seccion de servicios */
-
-.container-servicios{
+/* Sección de servicios */
+.container-servicios {
     width: 100%;
     display: flex;
     max-width: 1100px;
-    margin-left: 550px;
+    margin: 100px auto 0;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los elementos en la pantalla */
 }
 
-
-
-.card-servicios{
+.card-servicios {
     width: 100%;
     margin: 20px;
     border-radius: 6px;
     overflow: hidden;
-    background: var (--azul);
+    background: var(--azul);
     box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
     cursor: default;
     transition: all 400ms ease;
+    max-width: 300px; /* Limita el ancho máximo de las tarjetas */
 }
 
-.card-servicios:hover{
-   box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
-   transform: translateY(-3%);
+.card-servicios:hover {
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
 }
 
-.card-servicios img{
+.card-servicios img {
     width: 100%;
     height: 210px;
 }
 
-.card-servicios .contenido-servicios{
+.card-servicios .contenido-servicios {
     padding: 15px;
     text-align: center;
 }
 
-.card-servicios .contenido-servicios p{
+.card-servicios .contenido-servicios p {
     line-height: 1.5;
     color: #6a6a6a;
 }
 
-.card-servicios .contenido-servicios h3{
+.card-servicios .contenido-servicios h3 {
     font-weight: 400;
     margin-bottom: 15px;
     color: var(--blanco);
 }
-
 
 /* Botón estilo 1 */
 .bth-1 {
@@ -327,7 +328,7 @@ td {
 /* Contenido de los productos */
 .product-content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 50px;
 }
 
@@ -430,7 +431,7 @@ section{
 
 .footer {
     display: grid;
-    grid-template-column: repeat(auto-fit, minmax(200px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     gap: 3rem;
     background: var(--negro);
     left: 0;
@@ -986,5 +987,74 @@ section{
     .footer-content {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header-txt h1 {
+        font-size: 70px;
+    }
+
+    .header-content {
+        flex-direction: column;
+    }
+
+    .header-img {
+        order: 1;
+    }
+
+    .header-txt {
+        order: 2;
+        margin-bottom: 50px;
+    }
+
+    .ofert {
+        flex-direction: column;
+    }
+
+    .ofert-1 {
+        flex-basis: 100%;
+        margin-bottom: 15px;
+    }
+
+    .products h2 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-txt h1 {
+        font-size: 50px;
+    }
+
+    .card-servicios {
+        max-width: 100%;
+    }
+
+    .products h2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .menu .navbar ul li a {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .header-txt h1 {
+        font-size: 30px;
+    }
+
+    .header-txt p {
+        font-size: 16px;
+    }
+
+    .ofert-txt h3 {
+        font-size: 20px;
+    }
+
+    .product-content {
+        grid-template-columns: 1fr;
     }
 }
