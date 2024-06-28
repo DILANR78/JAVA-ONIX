@@ -39,18 +39,18 @@ ProveedorService proveedorService;
         return  "Compra";
     }
     
-    @GetMapping("/editarcompras/{idCompra}")
-    public String editarcompras(@PathVariable Long idCompras, ModelMap model){
+    @GetMapping("/editarcompra/{idCompra}")
+    public String editarcompras(@PathVariable Long idCompra, ModelMap model){
         model.addAttribute("compras", new Compras());
-        Optional<Compras> compras = registrarCompraService.getComprasById(idCompras);
+        Optional<Compras> compras = registrarCompraService.getComprasById(idCompra);
         model.addAttribute("compras", compras.orElse(null));
         List<Proveedor> proveedores = proveedorService.getProveedor();
-        model.addAttribute("proveedor", proveedores);
+        model.addAttribute("proveedores", proveedores);
         System.out.println("SE A CARGADO EL OBJETO: "+ compras);
         return "Editarcompra";
     }   
 
-    @PostMapping("/editarcompras/{idCompra}")
+    @PostMapping("/editarcompra/Editarcompra")
     public String postMethodEdit(@ModelAttribute("compra") Compras compra) {
         registrarCompraService.saveOrUpdate(compra);
         System.out.println("SE A EDITADO: " + compra.getIdCompra());
