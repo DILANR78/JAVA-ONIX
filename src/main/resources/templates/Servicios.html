@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONIX +</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./public/CSS/estilosServicios.css">
+    <link rel="stylesheet" href="./public/CSS/botonwhasapp.css">
+    <link rel="icon" href="./public/imagenes/logo.png">
+
+</head>
+
+<body>
+    
+    <header class="header">
+        
+        <div class="menu container">
+            <a th:href="@{/paginainicial}" class="logo">
+                <img src="./public/imagenes/logo.png" alt="ONIX Logo">
+            </a>
+            <input type="checbox" id="menu"/>
+            <label for="menu">
+                <img src="./public/imagenes/menu.png" class="menu-icono" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="/Servicios">Servicios</a>
+                    </li>
+                    <li>
+                        <a href="#">Productos</a>
+                    </li>
+                    <li><a href="#">Contáctenos</a></li>
+                </ul>
+            </nav>
+            <div>
+                <ul>
+                    <li class="submenu">
+                        <a href="/login"><button class="icono-login"><ion-icon name="person"></ion-icon></button></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>          
+        </div>
+
+        <div class="container-servicios">
+            <div class="card-servicios">
+                <figure>
+                    <img src="./public/imagenes/medidas.jpg">
+                </figure>
+                <div class="contenido-servicios">
+                    <h3>Medidas Personalizadas</h3>
+                    <p>
+                        Ofrecemos el servicio de medidas personalizadas a cada prenda que se requiera, generando así un nivel de personalización individual.</p>
+                </div>
+            </div>
+
+            <div class="card-servicios">
+                <figure>
+                    <img src="./public/imagenes/diseño.jpg">
+                </figure>
+                <div class="contenido-servicios">
+                    <h3>Estilos diferentes</h3>
+                    <p> Poseemos estilos diferentes a los que se encuentran en el mercado, adicionalmente, diseñamos cualquier prenda al gusto del cliente.</p>
+                </div>
+            </div>
+
+            <div class="card-servicios">
+                <figure>
+                    <img src="./public/imagenes/precios.jpg">
+                </figure>
+                <div class="contenido-servicios">
+                    <h3>Precios Amigables</h3>
+                    <p>
+                        Tenemos los mejores precios del mercado, siendo accesible para empresas que recien estan empezando.</p>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+
+
+    <footer class="footer">
+       <div class="footer-content container">
+
+           <div class="sec-1">
+               <img src="./public/imagenes/logo.png" alt="logo">
+               <p>"Diseñamos y confeccionamos prendas que destacan por su calidad, confort y atención al detalle, reflejando lo mejor de tu empresa."</p>
+               <div class="footer-icon">
+                   <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i>Facebook</a>
+                   <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i>Instagram</a>
+                   <a href="https://www.x.com/"><i class="fab fa-twitter"></i>Twitter</a>
+               </div>
+           </div>
+           <div class="link">
+               <h4>Nuestros Productos</h4>
+                    <li><a href="productoChaquetaVigilancia.html">Chaquetas</a></li>
+                    <li><a href="productoUniforme.html">Uniformes</a></li>
+                    <li><a href="productoCamisas.html">Camisetas</a></li>
+                    <li><a href="productoPantalonDril.html">Pantalones</a></li>
+           </div>
+
+            <div class="link">
+                <h4>Contactenos</h4>
+                    <li><a href="https://api.whatsapp.com/send?phone=3053656257&text=Hola, me gustaria Obtener más información">WhastApp: +57 3053656257</a></li>
+                    <li><a href="https://gmail.com/">Correo: Onix@confeciones.com</a></li>
+                    <li><a href="https://maps.app.goo.gl/KeaAgfnEFodL4hZr7">Dirección: Cl. 49d Sur #5c-68, Bogotá</a></li>
+            </div>
+
+
+
+        </div>
+
+    </footer>
+
+    <script src="../JS/scriphomepage.js"></script>
+    <script src="../JS/scriphomepagelogin.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../JS/validacionlogin.js"></script>
+
+</body>
+</html>

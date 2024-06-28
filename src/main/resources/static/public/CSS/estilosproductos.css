@@ -195,6 +195,193 @@ td {
     margin-bottom: 2px;
 }
 
+
+/* Estilos de productos */
+
+.background {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 2rem;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 75rem;
+    gap: 1.5rem;
+}
+
+.articles article {
+    max-width: 20rem;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+
+.articles article h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.6rem;
+    color: #95A5A6;
+    transition: color 0.3s ease-out;
+}
+
+
+.articles article img {
+    max-width: 100%;
+    transform-origin: center;
+    transition: transform 0.4s ease-in-out;
+}
+
+.article-preview {
+    padding: 1.5rem;
+    background: #527171;
+}
+
+.articles figure {
+    width: 100%;
+    height: 13rem;
+    overflow: hidden;
+}
+
+.articles figure img {
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.articles article:hover img {
+    transform: scale(1.5);
+}
+
+/* Pie de página */
+
+section{
+    padding: 80px 12% 60px;
+}
+
+
+.footer {
+    display: grid;
+    grid-template-column: repeat(auto-fit, minmax(200px, auto));
+    gap: 3rem;
+    background: var(--negro);
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.sec-1 img{
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.sec-1 p {
+    max-width: 330px;
+    color: #95A5A6;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin: 18px 0;
+}
+
+.sec-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Ajusta el padding según sea necesario */
+}
+
+.footer-icon {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Añadido para separar los iconos */
+}
+.footer-icon i {
+    width: 40px;
+    height: 40px;
+    background: var(--grisclaro);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all .42s;
+}
+
+
+.footer-icon i:hover{
+    background: var(--azuleshover);
+    transform: translateY(-5px);
+}
+
+.footer h4{
+    color: #95A5A6;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+}
+
+.footer li a{
+    color: #DDD9D9;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 38px;
+    transition: all .42s;
+}
+
+.footer li a:hover{
+    color: var(--grisclaro);
+}
+
+.footer li{
+    transition: all .42s;
+}
+
+.footer li:hover{
+    transform: translateX(5px);
+}
+
+/* Contenido del pie de página */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Enlaces en el pie de página */
+.link h4 {
+    font-size: 18px;
+    color: #95A5A6;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.link li {
+    list-style: none; /* Para eliminar el punto de la lista si no lo deseas */
+    margin-top: 10px; /* Añadido para dar margen superior */
+}
+
+.link a {
+    font-size: 16px;
+    color: #85929E;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
 /* Botón estilo 1 */
 .bth-1 {
     display: inline-block;

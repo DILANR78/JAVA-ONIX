@@ -17,11 +17,14 @@
     box-sizing: border-box;
     background-color: var(--negro);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    overflow: hidden;
 }
-
-body{
-    margin: 0;
-    padding: 0;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 h1 {
@@ -214,4 +217,9 @@ h1 {
 
 .my-form__signup a:hover {
     color: var(--primary-hover);
+}
+
+
+::-webkit-scrollbar {
+    display: none;
 }

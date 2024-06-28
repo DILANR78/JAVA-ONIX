@@ -36,6 +36,21 @@ public class rutas {
         return "login";
     }
 
+    @RequestMapping("/Servicios")
+    public String Servicios(){
+        return "Servicios";
+    }
+
+    @RequestMapping("/Productos")
+    public String Productos(){
+        return "Productos";
+    }
+
+    @RequestMapping("/Contactenos")
+    public String Contactenos(){
+        return "Contactenos";
+    }
+
     @GetMapping("/dashboard")
     public String dashboard(){
         return "indexdashboard";
