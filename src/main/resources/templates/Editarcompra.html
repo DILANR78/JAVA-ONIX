@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th"http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <title>EDITAR</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./public/CSS/estilosproveedor.css">
+    <link rel="icon" href="./public/imagenes/logo.png">
   </head>
 
 
@@ -23,7 +24,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-        <h1 class="text-center text-dark">EDITAR PROVEEDOR</h1>
+        <h1 class="text-center text-dark">EDITAR COMPRA</h1>
           <div class="card-body">
             
             <!-- HACEMOS LA PETICION POST EDITAR DEL MODULO PROVEEDOR -->
@@ -39,20 +40,20 @@
                 <label>NOMBRE DEL PROVEEDOR</label> 
                 <br>
                 <select th:field="${compras.proveedor}" name="proveedor" class="form-control">
-                  <option th:each="proveedores : ${proveedores}" th:value="proveedores.idProveedor" th:text="proveedores.nombreProveedor" ></option>
+                  <option th:each="proveedor : ${proveedores}" th:value="${proveedor.idProveedor}" th:text="${proveedor.nombreProveedor}" ></option>
                 </select>
                 <br>
 
                 <!-- LLAVE FORANEA -->
 
-                <label>NUMERO DE DOCUMENTO DEL PROVEEDOR: </label>
-                <input th:field="${proveedor.numeroDocumento}"  type="text"  id="numeroproveedor"  name="numeroproveedor" class="form-control" placeholder="NUMERO DE DOCUMENTO">
-                 <br>
+                <label>VALOR DE LA COMPRA</label>
+                <input  th:field="${compras.valorToltalCompra}" type="text" id="valorToltalCompra"  name="valorToltalCompra" class="form-control" >
+                <br>
 
-                 <!-- BOTON DE EDITAR PROVEEDOR -->
+                 <!-- BOTON DE EDITAR COMPRA -->
 
                 <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">EDITAR PROVEEDOR</button>
+                  <button type="submit" class="btn btn-primary">EDITAR COMPRA</button>
                  </div>
 
 
