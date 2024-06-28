@@ -33,6 +33,10 @@ h1 {
 
 }
 
+a {
+    background-color: var(--azul);
+}
+
 .background {
     content: "";
     position: absolute;
@@ -222,4 +226,78 @@ h1 {
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 992px) {
+    .my-form {
+        padding: 1.5rem;
+        min-width: 15rem;
+        max-width: 25rem;
+    }
+
+    .my-form__button {
+        font-size: 1rem;
+        line-height: 2.5rem;
+        min-height: 2.5rem;
+    }
+
+    .text-field input {
+        height: 2.5rem;
+        text-indent: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .my-form {
+        padding: 1rem;
+        min-width: 12.5rem;
+        max-width: 22.5rem;
+    }
+
+    .my-form__button {
+        font-size: 0.875rem;
+        line-height: 2rem;
+        min-height: 2rem;
+    }
+
+    .text-field input {
+        height: 2rem;
+        text-indent: 0.75rem;
+    }
+
+    .text-field label {
+        font-size: 0.75rem;
+    }
+
+    .my-form__signup a {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .my-form {
+        padding: 0.5rem;
+        min-width: 10rem;
+        max-width: 20rem;
+    }
+
+    .my-form__button {
+        font-size: 0.75rem;
+        line-height: 1.75rem;
+        min-height: 1.75rem;
+    }
+
+    .text-field input {
+        height: 1.75rem;
+        text-indent: 0.5rem;
+    }
+
+    .text-field label {
+        font-size: 0.625rem;
+    }
+
+    .my-form__signup a {
+        font-size: 0.875rem;
+    }
 }
