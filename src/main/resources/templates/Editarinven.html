@@ -33,7 +33,7 @@
 
                             <!-- LLAVE FORANEA -->
 
-                            <label>CATEGORIAS</label>
+                            <label>CATEGORIA</label>
                             <br>
                             <select th:field="${inventarios.categoria}" name="tipoCategoria" class="form-control">
                                 <option th:each="categoria : ${categorias}" th:value="${categoria.idCategoria}" th:text="${categoria.tipoCategoria}"></option>
