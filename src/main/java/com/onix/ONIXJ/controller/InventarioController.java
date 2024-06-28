@@ -47,33 +47,35 @@ public class InventarioController {
     @GetMapping("/editarinventario/{idInventario}")
     public String editarinventario(@PathVariable Long idInventario, ModelMap model){
         model.addAttribute("inventarios", new Inventario());
-        Optional<Inventario> inventatrios = inventarioService.getInventarioById(idInventario);
-        model.addAttribute("inventarios", inventatrios.orElse(null));
-        List<Proveedor> proveedores = proveedorService.getProveedor();
-        model.addAttribute("proveedor", proveedores);
+        Optional<Inventario> inventarios=inventarioService.getInventarioById(idInventario);
+        model.addAttribute("inventarios", inventarios.orElse(null));
         List<Categoria> categorias = categoriaService.getCategoria();
         model.addAttribute("categorias", categorias);
-        System.out.println("SE A CARGADO EL OBJETO: "+inventatrios);
+        System.out.println("SE A CARGADO EL OBJETO: "+inventarios);
         return "Editarinven";
     }
 
     @PostMapping("/editarinventario/Editarinventario")
-    public String postMethodEdit(@ModelAttribute("inventario") Inventario inventario) {
+    public String postMethodEdit(@ModelAttribute("inventario") Inventario inventario, ModelMap model) {
         inventarioService.saveOrUpdate(inventario);
         System.out.println("SE A EDITADO: "+inventario.getIdInventario());
-        return "redirect:/inventario";
+        return "redirect:/inventarios";
     }
     
     @PostMapping("/agregarinventario")
     public String guardarInventario(@ModelAttribute("inventario")Inventario inventario) {
         inventarioService.saveOrUpdate(inventario);
         System.out.println("SE A REGISTRADO: "+inventario);
-        return "redirect:/inventario";
+        return "redirect:/inventarios";
     }
 
     @GetMapping("/Agregarinventario")
     public String Agregarinventario(ModelMap model) {
         model.addAttribute("inventarios", new Inventario());
+        List<Categoria> categorias = categoriaService.getCategoria();
+        model.addAttribute("categorias", categorias);
+        List<Proveedor> proveedores = proveedorService.getProveedor();
+        model.addAttribute("proveedor", proveedores);
         return "Agregarinventario";
     }
     
@@ -82,7 +84,7 @@ public class InventarioController {
     public String eliminarInventario(@PathVariable Long idInventario, ModelMap model) {
         inventarioService.deleteInventario(idInventario);
         System.out.println("SE A ELIMINADO: "+idInventario);
-        return "redirect:/inventario";
+        return "redirect:/inventarios";
     }
     
     

@@ -24,7 +24,7 @@
         <!-- CREACION DE LOS BOTONES DE REPORTES Y DE ATRAS -->
 
         <div class="col-lg-3 d-flex flex-row">
-          <a th:href="@{/Agregarcompra}" class="btn btn-primary btn-sm mb-3 mr-2">REGISTRAR INVENTARIO</a>
+          <a th:href="@{/Agregarinventario}" class="btn btn-primary btn-sm mb-3 mr-2">REGISTRAR INVENTARIO</a>
           <a href="#" class="btn btn-success btn-sm mb-3 mr-2">REPORTE EN EXCEL</a>
           <a href="#" class="btn btn-danger btn-sm mb-3 mr-5">REPORTE EN PDF</a>
           <a id="btncareverga" th:href="@{/dashboard}" class="btn btn-light btn-sm mb-3">ATRAS</a>
@@ -49,7 +49,7 @@
             <th scope="col">PRECIO PRODUCTO TERMINADO</th>
             <th scope="col">FECHA INGRESO</th>
             <th scope="col">FECHA SALIDA</th>
-            <th scope="col">PROVEEDOR</th>
+            <!-- <th scope="col">PROVEEDOR</th> -->
             <th scope="col">ACCIONES</th>
           </tr>
         </thead>
@@ -73,13 +73,13 @@
             <td th:text="${inventario.precioProductoTerminado}"></td>
             <td th:text="${inventario.fechaIngreso}"></td>
             <td th:text="${inventario.fechaSalida}"></td>
-            <td th:text="${inventario.proveedor.nombreProveedor}"></td>
+            <!-- <td th:text="${inventario.proveedor.nombreProveedor}"></td> -->
 
             <!-- BOTONES DE LAS ACCIONES EDITAR Y AGREGAR -->
 
             <td>
-              <!-- <a class="btn btn-primary" th:href="@{/editarproveedor/{idProveedor}(idProveedor=${proveedores.idProveedor})}">EDITAR</a>  -->
-              <!-- <a class="btn btn-danger" th:href="@{/eliminarcompra/{idCompra}(idCompra=${compras.idCompra})}">ELIMINAR</a> -->
+              <a class="btn btn-primary" th:href="@{/editarinventario/{idInventario}(idInventario=${inventario.idInventario})}">EDITAR</a>
+              <a class="btn btn-danger" th:href="@{/eliminarinventario/{idInventario}(idInventario=${inventario.idInventario})}">ELIMINAR</a>
             </td>
 
           </tr>

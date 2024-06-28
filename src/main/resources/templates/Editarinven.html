@@ -8,49 +8,83 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./public/CSS/estilosproveedor.css">
     <link rel="icon" href="./public/imagenes/logo.png">
-  </head>
+</head>
 
-<!-- CREACION DEL LA PLANTILLA -->
+<!-- CREACION DE LA PLANTILLA -->
 
 <body>
 
-  <br>
-
-  <br>
+    <br>
+    <br>
 
     <!-- TITULO DE LA PLANTILLA -->
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-        <h1 class="text-center text-dark">EDITAR INVENTARIO</h1>
-          <div class="card-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                <h1 class="text-center text-dark">EDITAR INVENTARIO</h1>
+                <div class="card-body">
 
-              <!-- HACEMOS LA PETICION POST EDITAR DEL MODULO INVENTARIO -->
+                    <!-- HACEMOS LA PETICION POST EDITAR DEL MODULO INVENTARIO -->
 
-              <form action="/editarinventario/Editarinventario" method="post">
-              <div class="form-group">
-                <input type="hidden" th:field="${inventario.idInventario} id="idInventario" name="idInventario"/>
-                <label>CATEGORIA</label>
-                <input th:field="${rol.nombreRol}"  type="text" id="nombreRol"  name="nombreRol" class="form-control" placeholder="NOMBRE ROL">
-                <br>
+                    <form action="/editarinventario/Editarinventario" method="post">
+                        <div class="form-group">
+                            <input type="hidden" th:field="${inventarios.idInventario}" name="idInventario" id="idInventario" />
 
-                <!-- BOTON DE EDITAR INVENTARIO -->
+                            <!-- LLAVE FORANEA -->
 
-                <div class="box-footer">
-                  <button type="submit" class="btn btn-primary">EDITAR ROL</button>
-                 </div>
+                            <label>CATEGORIA</label>
+                            <br>
+                            <select th:field="${inventarios.categoria}" name="tipoCategoria" class="form-control">
+                                <option th:each="categoria : ${categorias}" th:value="${categoria.idCategoria}" th:text="${categoria.tipoCategoria}"></option>
+                            </select>
+                            <br>
 
+                            <!-- LLAVE FORANEA -->
 
-              </div>
-            </form>
-          </div>
-      </div>
+                            <label style="color: black; display: block; text-align: left;">TIPO INSUMO</label>
+                            <input th:field="${inventarios.tipoInsumo}" type="text" id="tipoInsumo" name="tipoInsumo" class="form-control" placeholder="APELLIDO USUARIO">
+                            <br>
 
+                            <label style="color: black; display: block; text-align: left;">STOCK INSUMO</label>
+                            <input th:field="${inventarios.stockInsumo}" type="number" id="stockInsumo" name="stockInsumo" class="form-control" placeholder="APELLIDO USUARIO">
+                            <br>
 
+                            <label style="color: black; display: block; text-align: left;">PRECIO INSUMO</label>
+                            <input th:field="${inventarios.precioInsumo}" type="number" id="precioInsumo" name="precioInsumo" class="form-control" placeholder="APELLIDO USUARIO">
+                            <br>
+
+                            <label style="color: black; display: block; text-align: left;">TIPO PRODUCTO TERMINADO</label>
+                            <input th:field="${inventarios.tipoProductoTerminado}" type="text" id="tipoProductoTerminado" name="tipoProductoTerminado" class="form-control" placeholder="APELLIDO USUARIO">
+                            <br>
+
+                            <label style="color: black; display: block; text-align: left;">STOCK PRODUCTO TERMINADO</label>
+                            <input th:field="${inventarios.stockProductoTerminado}" type="number" id="stockProductoTerminado" name="stockProductoTerminado" class="form-control" placeholder="APELLIDO USUARIO">
+                            <br>
+
+                            <label style="color: black; display: block; text-align: left;">TALLA TERMINADO</label>
+                            <input th:field="${inventarios.tallaProductoTerminado}" type="text" id="tallaProductoTerminado" name="tallaProductoTerminado" class="form-control" placeholder="APELLIDO USUARIO">
+                            <br>
+
+                            <label style="color: black; display: block; text-align: left;">PRECIO PRODUCTO TERMINADO</label>
+                            <input th:field="${inventarios.precioProductoTerminado}" type="number" id="precioProductoTerminado" name="precioProductoTerminado" class="form-control" placeholder="APELLIDO USUARIO">
+                            <br>
+
+                            <label style="color: black; display: block; text-align: left;">FECHA SALIDA</label>
+                            <input th:field="${inventarios.fechaSalida}" type="date" id="fechaSalida" name="fechaSalida" class="form-control" placeholder="APELLIDO USUARIO">
+                            <br>
+
+                            <!-- BOTON DE EDITAR INVENTARIO -->
+
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">EDITAR INVENTARIO</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

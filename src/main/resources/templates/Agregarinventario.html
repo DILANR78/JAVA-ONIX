@@ -23,34 +23,72 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-        <h1 class="text-center text-dark">AGREGAR USUARIO</h1>
+        <h1 class="text-center text-dark">AGREGAR INVENTARIO</h1>
           <div class="card-body">
 
                <!-- HACEMOS LA PETICION POST DEL MODULO INVENTARIO -->
 
               <form action="/agregarinventario" method="post">
               <div class="form-group">
-                <label>NOMBRE USUARIO: </label>
-                <input type="text" id="nombreUsuario"  name="nombreUsuario" class="form-control" placeholder="NOMBRE USUARIO">
-                <br>
-                <label>APELLIDO USUARIO: </label>
-                <input type="text" id="apellidoUsuario"  name="apellidoUsuario" class="form-control" placeholder="APELLIDO USUARIO">
-                <br>
-                <label>CORREO USUARIO: </label>
-                <input type="text" id="correoUsuario"  name="correoUsuario" class="form-control" placeholder="CORREO USUARIO">
-                <br>
 
                 <!-- LLAVE FORANEA -->
-                <label></label>
-                <select th:field="*{usuario.rol}" name="rol" class="form-control" placeholder="NOMBRE ROL">
-                    <option th:each="rol : ${roles}" th:value="${rol.idRol}"  th:text="${rol.nombreRol}"></option>
+
+                <label style="color: black; display: block; text-align: left;">TIPO DE CATEGORIA </label>
+                <select th:field="*{inventarios.categoria}" name="categoria" class="form-control" placeholder="NOMBRE ROL">
+                  <option th:each="categoria : ${categorias}" th:value="${categoria.idCategoria}"  th:text="${categoria.tipoCategoria}"></option>
                 </select>
+                <br>
+
                 <!-- LLAVE FORANEA -->
 
-                 <br>
+                <label style="color: black; display: block; text-align: left;">TIPO INSUMO</label>
+                <input type="text" id="tipoInsumo"  name="tipoInsumo" class="form-control" placeholder="TIPO INSUMO">
+                <br>
+
+                <label style="color: black; display: block; text-align: left;">STOCK INSUMO</label>
+                <input type="number" id="stockInsumo"  name="stockInsumo" class="form-control" placeholder="STOCK INSUMO">
+                <br>
+
+                <label style="color: black; display: block; text-align: left;">PRECIO INSUMO</label>
+                <input type="number" id="precioInsumo"  name="precioInsumo" class="form-control" placeholder="PRECIO INSUMO">
+                <br>  
                 
+                <label style="color: black; display: block; text-align: left;">TIPO PRODUCTO TERMINADO</label>
+                <input type="text" id="tipoProductoTerminado"  name="tipoProductoTerminado" class="form-control" placeholder="TIPO PRODUCTO TERMINADO">
+                <br>
+
+                <label style="color: black; display: block; text-align: left;">STOCK PRODUCTO TERMINADO</label>
+                <input type="number" id="stockProductoTerminado"  name="stockProductoTerminado" class="form-control" placeholder="STOCK PRODUCTO TERMINADO">
+                <br>
+
+                <label style="color: black; display: block; text-align: left;">TALLA PRODUCTO TERMINADO</label>
+                <input type="text" id="tallaProductoTerminado"  name="tallaProductoTerminado" class="form-control" placeholder="TALLA PRODUCTO TERMINADO">
+                <br>
+
+                <label style="color: black; display: block; text-align: left;">PRECIO PRODUCTO TERMINADO</label>
+                <input type="number" id="precioProductoTerminado"  name="precioProductoTerminado" class="form-control" placeholder="PRECIO PRODUCTO TERMINADO">
+                <br>
+
+                <label style="color: black; display: block; text-align: left;">FECHA INGRESO</label>
+                <input type="date" id="fechaIngreso"  name="fechaIngreso" class="form-control" placeholder="APELLIDO USUARIO">
+                <br>
+<!-- 
+                <label style="color: black; display: block; text-align: left;">FECHA INGRESO</label>
+                <input type="datetime-local" id="fechaSalida"  name="fechaSalida" class="form-control" placeholder="APELLIDO USUARIO">
+                <br> -->
+
+                <!-- LLAVE FORANEA -->
+<!-- 
+                <label style="color: black; display: block; text-align: left;">NOMBRE PROVEEDOR </label>
+                <select th:field="*{inventarios.proveedores}" name="categoria" class="form-control" placeholder="NOMBRE ROL">
+                <option th:each="proveedores : ${proveedor}" th:value="${proveedores.idProveedor}"  th:text="${proveedores.nombreProveedor}"></option>
+                </select>
+                <br> -->
+                
+               <!-- LLAVE FORANEA -->
+
                 <div class="box-footer">
-                  <button  type="submit" class="btn btn-primary">GUARDAR USUARIO</button>
+                  <button  type="submit" class="btn btn-primary">GUARDAR INVENTARIO</button>
                  </div>
               </div>
             </form>
