@@ -216,15 +216,49 @@ button:hover ion-icon[name="search-outline"] {
     z-index: 4;
 }
 
-.tabla-container{
-    text-align: center; 
-    margin: 20px auto; 
-    max-width: 900px;
-    background-color: whitesmoke ;
+.cuadrosgeis {
+    width: 800px;
+    height: 2000px;
+    margin-right: 450px;
+    margin-top: 400px;
 }
 
+.card {
+  background-color: #f8f9fa;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px; /* Ajusta la altura según tus necesidades */
+}
 
+.card-body {
+  padding: 1.25rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
 
+.card.green {
+  background-color: #28a745; /* Verde */
+  color: white;
+}
+
+.card.blue {
+  background-color: #007bff; /* Azul */
+  color: white;
+}
+
+.card.orange {
+  background-color: #fd7e14; /* Naranja */
+  color: white;
+}
+
+.card.yellow {
+  background-color: #ffc107; /* Amarillo */
+  color: white;
+}
 
 /* Responsive*/
 
