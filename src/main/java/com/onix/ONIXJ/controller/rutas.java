@@ -51,6 +51,16 @@ public class rutas {
         return "Contactenos";
     }
 
+    @GetMapping("/error404")
+    public String Error404(){
+        return "Error 404";
+    }
+
+    @GetMapping("/error500")
+    public String Error500(){
+        return "Error 505";
+    }
+
     @GetMapping("/dashboard")
     public String dashboard(){
         return "indexdashboard";
