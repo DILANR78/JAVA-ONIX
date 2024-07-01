@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONIX +</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./public/CSS/estilosdashboard.css">
+    <link rel="icon" href="./public/imagenes/logo.png">
 </head>
+
+<!-- CREACION DEL LA PLANTILLA -->
+
 <body>
 
     <div class="barra-dashboard">
-        <div class="nombre-logo">
+        <div th:href="@{/indexdashboard}"  class="nombre-logo">
             <a class="logo">
                 <img src="./public/imagenes/logo.png" alt="ONIX Logo">
             </a>
         </div>
         <ul class="menu">
-            <li class="menu-item"><span>DASHBOARD</span></li>
+            <li class="menu-item"><span></span></li>
             <li class="menu-item with-submenu"><span>INVENTARIO</span>
                 <ul class="submenu">
-                    <a th:href="@{/inventario}"><li id="fRegistrarInventario"><span>INVENTARIO</span></li></a>
+                    <a th:href="@{/inventarios}"><li id="fRegistrarInventario"><span>INVENTARIO</span></li></a>
                 </ul>
             </li>
             <li class="menu-item with-submenu"><span>CATEGORIA</span>
                 <ul class="submenu">
                     <a th:href="@{/Categoria}"><li id="fRegistrarCategoria"><span>TIPO CATEGORIA</span></li></a>
+                    <li id="fGenerarVenta"><span>INSUMOS</span></li>
+                    <li id="fGenerarVenta"><span>PRODUCTOS TERMINADOS</span></li>
                 </ul>
             </li>
             </li>
             <li class="menu-item with-submenu"><span>USUARIO</span>
                 <ul class="submenu">
                     <a th:href="@{/rol}"><li id="fRegistrarRolesr"><span>ROLES</span></li></a>
-                    <a th:href="@{/usuario}"><li id="fRegistrarUsuario"><span>USUARIOS NUEVOS 222</span></li></a>
+                    <a th:href="@{/usuario}"><li id="fRegistrarUsuario"><span>USUARIOS NUEVOS</span></li></a>
                 </ul>
             </li>
             <li class="menu-item with-submenu"><span>PROVEEDORES</span>
                 <ul class="submenu">
                     <a th:href="@{/RegistrarProveedor}"><li id="fRegistrarProveedor"><span>REGISTRAR PROVEEDOR</span></li></a>
-                </ul>
-            </li>
-            <li class="menu-item with-submenu"><span>COMPRAS</span>
-                <ul class="submenu">
-                    <li id="fRealizarCompra"><span>REGISTRO DE COMPRAS</span></li>
                 </ul>
             </li>
         </ul>
@@ -54,11 +56,58 @@
                     <button type="submit"><ion-icon name="search-outline"></ion-icon></button>
                 </div>
                 <div class="cerrar-sesion">
-                    <a id="btncareverga" th:href="@{/login}" class="btn btn-light btn-sm mb-3">CERRAR SESION</a>
+                    <a id="btncareverga" th:href="@{/cerrarsesion}" class="btn btn-light btn-sm mb-3">CERRAR SESION</a>
                 </div>
             </div>
         </div>
+
+
         <section id="formulario"></section>
+
+        <!-- Panel del Dashboard -->
+        <section class="cuadrosgeis">
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-3">
+                <div class="card green">
+                    <div class="card-body">
+                        Material en Stock:
+
+                        #N/A
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card blue">
+                    <div class="card-body">
+                        Prendas en Stock:
+
+                        #N/A
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card orange">
+                    <div class="card-body">
+                        Proveedores Registrados:
+
+                        #N/A
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card yellow">
+                    <div class="card-body">
+                        Grafica de Ventas Anuales:
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
     </div>
 
 
@@ -71,5 +120,7 @@
     <script src="/static/JS/formularios.js"></script>
     <!-- <script src="../JS/scripdashboard.js"></script> -->
 </body>
-<script></script>
+
+<!-- FIN DE LA PLANTILLA -->
+
 </html>

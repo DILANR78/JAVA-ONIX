@@ -12,82 +12,54 @@
 
     <title>ONIX +</title>
     <link rel="icon" href="./public/imagenes/12323.jpg">
-
-
-
 </head>
+
+
+
 <body>
+
+
 <div class="background"></div>
 <div class="centering">
-    <form class="my-form" action="" method="post" onsubmit="return validarFormulario()">
+
+    <form class="my-form" th:action="@{/validacionUsuario}" th:method="get" th:object="${usuario}">
         <div class="login-welcome-row">
             <a th:href="@{/paginainicial}" class="logo">
-            <img class="login-welcome" src="./public/imagenes/12323-removebg-preview.png" alt="Onix Logo">
+                <img class="login-welcome" src="./public/imagenes/12323-removebg-preview.png" alt="Onix Logo">
             </a>
-            <!-- optimize the image in production -->
             <h1>Inicio de Sesión</h1>
         </div>
+    
         <div class="text-field">
-            <label for="exampleInputEmail1">Correo:</label>
-            <input
-                    aria-label="Email"
-                    type="email"
-                    id="exampleInputEmail1"
-                    name="txtCorreo"
-                    placeholder="Ingresar Correo"
-                    required>
+            <label for="exampleInputEmail1">CORREO</label>
+            <input th:field="*{correoUsuario}"
+                   aria-label="Email"
+                   type="email"
+                   id="exampleInputEmail1"
+                   name="correoUsuario"
+                   placeholder="Ingresar Correo"
+                   required>
         </div>
-
+    
         <div class="text-field">
-            <label for="exampleInputPassword1">Contraseña:</label>
-            <input
-                    id="exampleInputPassword1"
-                    type="password"
-                    aria-label="Password"
-                    name="txtContraseña"
-                    placeholder="Ingresa Contraseña"
-                    required>
-
+            <label for="exampleInputPassword1">CONTRASEÑA</label>
+            <input th:field="*{contraseñaUsuario}"
+                   id="exampleInputPassword1"
+                   type="password"
+                   aria-label="Password"
+                   name="contraseñaUsuario"
+                   placeholder="Ingresa Contraseña"
+                   required>
         </div>
-        <input type="submit" class="my-form__button" value="Ingresar" >
+        <input type="submit" class="my-form__button" value="Ingresar">
     </form>
+    
 </div>
 </body>
 
 
 <!-- Agregar mensaje de error usando JavaScript -->
 <p id="mensajeError" class="error-message" style="display:none;">Credenciales incorrectas. Por favor, inténtalo de nuevo.</p>
-
-<script>
-    function validarFormulario() {
-        var correo = document.getElementById("exampleInputEmail1").value;
-        var contraseña = document.getElementById("exampleInputPassword1").value;
-
-        // Verificar que el correo contenga al menos un carácter "@"
-        if (correo.indexOf("@") === -1) {
-            // Mostrar mensaje de error y evitar el envío del formulario
-            document.getElementById("mensajeError").innerText = "El correo electrónico debe contener '@' ";
-            document.getElementById("mensajeError").style.display = "block";
-            return false;
-        }
-
-        // Agregar tu lógica condicional aquí
-        if (correo === "dilan1@gmail.com" && contraseña === "1234") {
-            // Redirigir al dashboard
-            window.location.href = "/indexdashboard";
-            return false; // Evitar el envío del formulario
-
-        } else if (correo === "julian1@gmail.com" && contraseña === "12345") {
-             // Redirigir a otra página
-                window.location.href = "/indexdashboard2";
-                event.preventDefault();
-        } else {
-            // Mostrar mensaje de error y permitir el envío del formulario
-            document.getElementById("mensajeError").style.display = "block";
-            return true;
-        }
-    }
-</script>
 
 </div>
 

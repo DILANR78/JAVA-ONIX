@@ -1,13 +1,13 @@
-//REPOSITORY DE USUARIO
-
 package com.onix.ONIXJ.repository;
 
-// TODAS LAS IMPORTANCIONES NECESARIAS
-
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
 import com.onix.ONIXJ.entity.Usuario;
 
-//HACEMOS LA IMPORTANCION DEL ENTITY
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
-public interface UsuarioRepository extends JpaRepository <Usuario,Long>{
+    @Query(value = "SELECT * FROM onix.usuario WHERE correo_usuario = :correo AND contraseña_usuario = :contraseña", nativeQuery = true)
+    Usuario findByCorreoAndContraseña(@Param("correo") String correo, @Param("contraseña") String contraseña);
 }
